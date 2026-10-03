@@ -1,0 +1,4779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ajeesh I V // AI Prompt Engineer & Web Developer</title>
+  <meta name="description" content="Portfolio of Ajeesh I V - AI Prompt Engineer and AI Web Developer building next-gen web applications, LLM integrations, and interactive interfaces.">
+
+  <link rel="stylesheet" href="https://db.onlinewebfonts.com/c/b1314443e183d1cdd77049077c46facc?family=Orbitron-Medium" type="text/css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;600;700;800;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --gold: #F5B342;
+      --gold-light: #FFE28A;
+      --gold-glow: rgba(245, 179, 66, 0.4);
+      --crimson: #E62429;
+      --crimson-dark: #8C1115;
+      --arc-blue: #00F0FF;
+      --arc-glow: rgba(0, 240, 255, 0.35);
+      --cream: #F5EBE1;
+      --muted: rgba(245, 235, 225, 0.72);
+      --label: rgba(245, 179, 66, 0.65);
+      --bg-dark: #07090E;
+      --bg-surface: #0C101A;
+      --bg-card: rgba(12, 16, 26, 0.75);
+      --card-border: rgba(245, 179, 66, 0.2);
+      --border-blue: rgba(0, 240, 255, 0.22);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      width: 100%;
+      background: var(--bg-dark);
+      color: var(--cream);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    h1, h2, h3, h4, .heading-font {
+      font-family: 'Orbitron', 'Orbitron-Medium', 'Arial Narrow', sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+
+    .tech-mono {
+      font-family: 'Share Tech Mono', monospace;
+    }
+
+    /* TOP NAVIGATION BAR */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 48px;
+      background: rgba(7, 9, 14, 0.75);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(0, 240, 255, 0.15);
+      transition: all 0.3s ease;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--cream);
+    }
+
+    .nav-logo-badge {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, rgba(0, 240, 255, 0.15), rgba(245, 179, 66, 0.25));
+      border: 1px solid var(--gold);
+      display: grid;
+      place-items: center;
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 700;
+      box-shadow: 0 0 12px var(--gold-glow);
+    }
+
+    .nav-title {
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .nav-title span {
+      color: var(--arc-blue);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: all 0.25s ease;
+      position: relative;
+      padding: 4px 0;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--gold);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: var(--gold);
+      box-shadow: 0 0 8px var(--gold);
+      transition: width 0.25s ease;
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 18px;
+      border-radius: 999px;
+      background: rgba(0, 240, 255, 0.1);
+      border: 1px solid var(--arc-blue);
+      color: var(--arc-blue);
+      text-decoration: none;
+      font-size: 11.5px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 600;
+      transition: all 0.25s ease;
+    }
+
+    .nav-cta:hover {
+      background: var(--arc-blue);
+      color: #07090E;
+      box-shadow: 0 0 18px var(--arc-glow);
+      transform: translateY(-1px);
+    }
+
+    /* HERO SECTION */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      height: 100dvh;
+      overflow: hidden;
+      background: transparent;
+      padding-top: 70px;
+      z-index: 1;
+    }
+
+    /* GLOBAL HIGH-TECH STARK LAB ATMOSPHERIC BACKGROUND */
+    .global-bg-fx {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+      background: radial-gradient(ellipse 95% 85% at 50% 38%, #141B2A 0%, #0A0E17 48%, #05070B 82%, #020305 100%);
+    }
+
+    .global-grid {
+      position: absolute;
+      inset: -80px;
+      background-image: 
+        linear-gradient(rgba(0, 240, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 240, 255, 0.04) 1px, transparent 1px);
+      background-size: 50px 50px;
+      background-position: center center;
+      mask-image: radial-gradient(circle 950px at 50% 45%, #000 45%, transparent 85%);
+      -webkit-mask-image: radial-gradient(circle 950px at 50% 45%, #000 45%, transparent 85%);
+      will-change: transform;
+    }
+
+    /* LIVING TREE ROOTS CANVAS: Growing synaptic tree roots connecting down from the Suit Up circle */
+    .neural-roots-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* SUIT UP PAGE CIRCLE ANIMATION: Anchored strictly to the Hero Section */
+    .hero-circle-fx {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 0;
+      height: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero-reactor-glow {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate(-50%, -50%);
+      width: 820px;
+      height: 820px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0, 240, 255, 0.24) 0%, rgba(230, 36, 41, 0.12) 40%, rgba(245, 179, 66, 0.06) 62%, transparent 75%);
+      filter: blur(50px);
+      animation: reactorPulse 6s ease-in-out infinite alternate;
+    }
+
+    .hero-gold-glow {
+      position: absolute;
+      top: -55px;
+      left: 0;
+      transform: translate(-50%, -50%);
+      width: 580px;
+      height: 640px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(245, 179, 66, 0.16) 0%, transparent 68%);
+      filter: blur(55px);
+    }
+
+    .hero-pulse-wave {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      border: 1px solid rgba(0, 240, 255, 0.4);
+      animation: energyPulseWave 4.5s cubic-bezier(0.1, 0.7, 0.1, 1) infinite;
+    }
+
+    @keyframes energyPulseWave {
+      0% {
+        width: 140px;
+        height: 140px;
+        opacity: 0.85;
+        border-color: rgba(0, 240, 255, 0.65);
+        box-shadow: 0 0 20px rgba(0, 240, 255, 0.6);
+      }
+      50% {
+        opacity: 0.45;
+        border-color: rgba(0, 240, 255, 0.35);
+      }
+      100% {
+        width: 1100px;
+        height: 1100px;
+        opacity: 0;
+        border-color: rgba(245, 179, 66, 0);
+        box-shadow: 0 0 50px rgba(0, 240, 255, 0);
+      }
+    }
+
+    .hero-hologram-rings {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate(-50%, -50%);
+      width: 720px;
+      height: 720px;
+      border-radius: 50%;
+      border: 1px dashed rgba(0, 240, 255, 0.22);
+      pointer-events: none;
+    }
+
+    .hero-hologram-rings-inner {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      animation: ringRotate 45s linear infinite;
+    }
+
+    .hero-hologram-rings-inner::before {
+      content: '';
+      position: absolute;
+      inset: 52px;
+      border-radius: 50%;
+      border: 1px solid rgba(245, 179, 66, 0.18);
+      border-left-color: rgba(245, 179, 66, 0.6);
+      border-right-color: rgba(245, 179, 66, 0.6);
+      animation: ringRotateRev 30s linear infinite;
+    }
+
+    .hero-hologram-rings-inner::after {
+      content: '';
+      position: absolute;
+      inset: 110px;
+      border-radius: 50%;
+      border: 1px dotted rgba(0, 240, 255, 0.35);
+    }
+
+    .hero-hologram-rings-outer {
+      position: absolute;
+      inset: -140px;
+      border-radius: 50%;
+      border: 1px solid rgba(0, 240, 255, 0.12);
+      border-top-color: rgba(0, 240, 255, 0.45);
+      border-bottom-color: rgba(245, 179, 66, 0.45);
+      animation: ringRotate 70s linear infinite;
+    }
+
+    .hero-hologram-rings-outer::before {
+      content: '';
+      position: absolute;
+      inset: -60px;
+      border-radius: 50%;
+      border: 1px dashed rgba(245, 179, 66, 0.16);
+      animation: ringRotateRev 55s linear infinite;
+    }
+
+    /* Root Nexus Emitter Collar at the base of the Hero Circle */
+    .hero-root-nexus {
+      position: absolute;
+      top: 360px;
+      left: 0;
+      transform: translate(-50%, -50%);
+      width: 220px;
+      height: 48px;
+      border-radius: 50%;
+      background: radial-gradient(ellipse at center, rgba(0, 240, 255, 0.35) 0%, rgba(245, 179, 66, 0.15) 50%, transparent 80%);
+      border-bottom: 2px solid rgba(0, 240, 255, 0.7);
+      box-shadow: 0 10px 30px rgba(0, 240, 255, 0.4);
+      filter: blur(1px);
+    }
+
+    .hero-pedestal {
+      position: absolute;
+      top: calc(50% + 365px);
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: min(580px, 75vw);
+      height: 70px;
+      border-radius: 50%;
+      background: radial-gradient(ellipse at center, rgba(0, 240, 255, 0.2) 0%, rgba(245, 179, 66, 0.1) 40%, transparent 75%);
+      border: 1px solid rgba(0, 240, 255, 0.25);
+      box-shadow: 0 0 40px rgba(0, 240, 255, 0.18), inset 0 0 20px rgba(0, 240, 255, 0.15);
+      filter: blur(1px);
+      z-index: 0;
+    }
+
+    /* Ambient cyber aura for sections */
+    .section-cyber-aura {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .section-cyber-aura::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: min(720px, 90vw);
+      height: 380px;
+      border-radius: 50%;
+      background: radial-gradient(ellipse at center, rgba(0, 240, 255, 0.08) 0%, rgba(245, 179, 66, 0.04) 45%, transparent 75%);
+      filter: blur(35px);
+    }
+
+    @keyframes ringRotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes ringRotateRev {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(-360deg); }
+    }
+
+    @keyframes reactorPulse {
+      0% { opacity: 0.75; transform: translate(-50%, -50%) scale(0.96); }
+      100% { opacity: 1; transform: translate(-50%, -50%) scale(1.04); }
+    }
+
+    /* BASE HERO LAYER (Civilian Persona: Ajeesh I V) - Centered in Hero Circle */
+    .hero-base-img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(1.18);
+      width: min(1200px, 95vw);
+      height: min(920px, 93vh);
+      z-index: 1;
+      background-image: url('assets/hero_civilian.png');
+      background-size: contain;
+      background-position: center center;
+      background-repeat: no-repeat;
+      filter: drop-shadow(0 15px 40px rgba(0, 0, 0, 0.85)) drop-shadow(0 0 35px rgba(0, 240, 255, 0.35));
+    }
+
+    /* REVEAL HERO LAYER (Iron Man Neural Armor) - Centered in Hero Circle, Revealed on Cursor Hover */
+    .hero-reveal-img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(1.18);
+      width: min(1200px, 95vw);
+      height: min(920px, 93vh);
+      z-index: 2;
+      pointer-events: none;
+      background-image: url('assets/hero_ironman.png');
+      background-size: contain;
+      background-position: center center;
+      background-repeat: no-repeat;
+      filter: drop-shadow(0 15px 45px rgba(0, 0, 0, 0.9)) drop-shadow(0 0 40px rgba(245, 179, 66, 0.3)) drop-shadow(0 0 25px rgba(0, 240, 255, 0.4));
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.25s ease, visibility 0.25s ease;
+    }
+
+    .hero-reveal-hud {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(1.18);
+      width: min(1200px, 95vw);
+      height: min(920px, 93vh);
+      z-index: 3;
+      pointer-events: none;
+      background: radial-gradient(circle 280px at 50% 50%, rgba(0, 240, 255, 0.14) 0%, rgba(245, 179, 66, 0.08) 50%, transparent 75%);
+      mix-blend-mode: screen;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    /* CURSOR SCANNER RETICLE - HIDDEN PER USER SPECIFICATION: DO NOT INDICATE MOUSE MOVEMENT */
+    .cursor-scanner {
+      display: none !important;
+      opacity: 0 !important;
+      visibility: hidden !important;
+      pointer-events: none !important;
+    }
+
+    /* HERO UI OVERLAY GRID */
+    .hero-ui {
+      position: absolute;
+      inset: 0;
+      z-index: 8;
+      display: grid;
+      grid-template-columns: minmax(350px, 780px) 1fr minmax(310px, 360px);
+      padding: clamp(72px, 11vh, 88px) clamp(24px, 3.5vw, 44px) clamp(16px, 2.5vh, 28px);
+      pointer-events: none;
+      align-items: stretch;
+    }
+
+    .hero-left {
+      grid-column: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: clamp(10px, 1.8vh, 18px);
+      min-width: 0;
+      height: 100%;
+    }
+
+    .hero-copy {
+      max-width: 780px;
+      pointer-events: auto;
+    }
+
+    .stark-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--arc-blue);
+      margin-bottom: 12px;
+      background: rgba(0, 240, 255, 0.08);
+      border: 1px solid rgba(0, 240, 255, 0.28);
+      padding: 6px 14px;
+      border-radius: 4px;
+    }
+
+    .stark-tag-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--arc-blue);
+      box-shadow: 0 0 8px var(--arc-blue);
+      animation: pulseDot 1.5s infinite alternate;
+    }
+
+    @keyframes pulseDot {
+      from { opacity: 0.4; }
+      to { opacity: 1; }
+    }
+
+    .hero-copy h1 {
+      font-size: clamp(2.6rem, 5.0vw, 4.8rem);
+      font-weight: 800;
+      line-height: 0.98;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: var(--cream);
+      text-shadow: 0 4px 35px rgba(0, 0, 0, 0.85), 0 0 40px rgba(245, 179, 66, 0.28);
+    }
+
+    .hero-copy h1 .highlight-gold {
+      color: var(--gold);
+      text-shadow: 0 0 30px var(--gold-glow);
+    }
+
+    .hero-copy h1 .highlight-crimson {
+      color: #FF4D52;
+      text-shadow: 0 0 30px rgba(230, 36, 41, 0.45);
+    }
+
+    .pull-line {
+      display: block;
+    }
+
+    .hero-copy p {
+      margin-top: 14px;
+      max-width: 650px;
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.6;
+      color: var(--muted);
+      text-shadow: 0 1px 10px rgba(0, 0, 0, 0.8);
+    }
+
+    .icon-row {
+      display: flex;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .icon-btn {
+      position: relative;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid rgba(245, 179, 66, 0.4);
+      background: rgba(12, 16, 26, 0.65);
+      color: var(--gold);
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      padding: 0;
+      outline: none;
+      backdrop-filter: blur(10px);
+      transition: all 0.25s ease;
+    }
+
+    .icon-btn:hover {
+      background: rgba(245, 179, 66, 0.22);
+      border-color: var(--gold-light);
+      color: var(--gold-light);
+      box-shadow: 0 0 16px var(--gold-glow);
+      transform: translateY(-2px);
+    }
+
+    .icon-btn.arc-btn {
+      border-color: rgba(0, 240, 255, 0.45);
+      color: var(--arc-blue);
+    }
+
+    .icon-btn.arc-btn:hover {
+      background: rgba(0, 240, 255, 0.22);
+      border-color: var(--arc-blue);
+      color: #fff;
+      box-shadow: 0 0 18px var(--arc-glow);
+    }
+
+    .icon-btn svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      stroke-width: 1.4;
+      fill: none;
+      display: block;
+    }
+
+    /* CORE SPECIALTY PRODUCT CARD */
+    .product-card {
+      pointer-events: auto;
+      width: min(320px, 100%);
+      display: grid;
+      grid-template-columns: 74px 1fr;
+      grid-template-rows: auto auto;
+      gap: 8px 12px;
+      padding: 10px 14px;
+      border-radius: 16px;
+      background: var(--bg-card);
+      -webkit-backdrop-filter: blur(20px);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--card-border);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.65), 0 0 16px rgba(245, 179, 66, 0.08);
+      transition: all 0.3s ease;
+    }
+
+    .product-card:hover {
+      border-color: rgba(245, 179, 66, 0.45);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.75), 0 0 24px rgba(245, 179, 66, 0.18);
+      transform: translateY(-2px);
+    }
+
+    .product-thumb {
+      grid-column: 1;
+      grid-row: 1 / -1;
+      width: 74px;
+      min-height: 74px;
+      border-radius: 10px;
+      overflow: hidden;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      border: 1px solid rgba(245, 179, 66, 0.3);
+      position: relative;
+    }
+
+    .product-thumb::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, transparent 40%, rgba(230, 36, 41, 0.25) 100%);
+    }
+
+    .product-body {
+      grid-column: 2;
+      grid-row: 1;
+    }
+
+    .product-body h2 {
+      font-size: 11px;
+      line-height: 1.25;
+      text-transform: uppercase;
+      color: var(--gold);
+      letter-spacing: 0.06em;
+      margin-bottom: 2px;
+    }
+
+    .product-body p {
+      font-size: 10.5px;
+      line-height: 1.35;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .cart-btn {
+      grid-column: 2;
+      grid-row: 2;
+      justify-self: start;
+      align-self: end;
+      border: 1px solid var(--gold);
+      border-radius: 999px;
+      padding: 5px 14px;
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: rgba(245, 179, 66, 0.08);
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .cart-btn:hover {
+      background: var(--gold);
+      color: #07090E;
+      box-shadow: 0 0 16px var(--gold-glow);
+      transform: translateY(-1px);
+    }
+
+    /* RIGHT COLUMN (FILLED WITH COMPONENTS ABOUT AJEESH) */
+    .hero-right {
+      grid-column: 3;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: clamp(10px, 1.8vh, 18px);
+      min-width: 0;
+      height: 100%;
+      pointer-events: auto;
+    }
+
+    /* TOP RIGHT BADGE */
+    .hero-page-badge {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 3px;
+    }
+
+    .status-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .status-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #00F0FF;
+      box-shadow: 0 0 8px #00F0FF;
+      animation: pulseDot 1.5s infinite alternate;
+    }
+
+    .hero-page-code {
+      font-size: 12.5px;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+      font-variant-numeric: tabular-nums;
+      font-weight: 700;
+    }
+
+    .hero-page-sub {
+      font-size: 9.5px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--arc-blue);
+      opacity: 0.85;
+    }
+
+    /* AGENT DOSSIER CARD (NEW RIGHT-SIDE COMPONENT) */
+    .dossier-card {
+      width: min(340px, 100%);
+      background: var(--bg-card);
+      border: 1px solid rgba(0, 240, 255, 0.25);
+      border-radius: 16px;
+      padding: 14px 18px;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55), 0 0 18px rgba(0, 240, 255, 0.08);
+      transition: all 0.3s ease;
+      text-align: left;
+    }
+
+    .dossier-card:hover {
+      border-color: var(--arc-blue);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.65), 0 0 24px var(--arc-glow);
+      transform: translateY(-2px);
+    }
+
+    .dossier-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .dossier-tag {
+      font-size: 9.5px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .dossier-tag-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 6px var(--gold);
+    }
+
+    .dossier-pulse {
+      font-size: 9px;
+      color: var(--arc-blue);
+      letter-spacing: 0.1em;
+      padding: 2px 6px;
+      background: rgba(0, 240, 255, 0.08);
+      border-radius: 3px;
+      border: 1px solid rgba(0, 240, 255, 0.2);
+    }
+
+    .dossier-title {
+      font-size: 13px;
+      color: var(--cream);
+      letter-spacing: 0.04em;
+      margin-bottom: 4px;
+    }
+
+    .dossier-desc {
+      font-size: 11px;
+      line-height: 1.45;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .dossier-desc strong {
+      color: var(--gold);
+    }
+
+    .dossier-metrics {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin-bottom: 10px;
+      padding: 8px 10px;
+      background: rgba(7, 9, 14, 0.45);
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .metric-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 10px;
+      letter-spacing: 0.06em;
+    }
+
+    .metric-label {
+      color: rgba(245, 235, 225, 0.7);
+    }
+
+    .metric-val {
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .metric-track {
+      width: 100%;
+      height: 3px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .metric-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      border-radius: 999px;
+    }
+
+    .metric-fill.arc-fill {
+      background: linear-gradient(90deg, var(--arc-blue), #9EFFFF);
+    }
+
+    .dossier-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .dossier-chip {
+      font-size: 9.5px;
+      font-family: 'Share Tech Mono', monospace;
+      padding: 2px 7px;
+      border-radius: 4px;
+      background: rgba(0, 240, 255, 0.06);
+      border: 1px solid rgba(0, 240, 255, 0.2);
+      color: var(--arc-blue);
+    }
+
+    /* BOTTOM RIGHT SPECS */
+    .specs {
+      width: min(340px, 100%);
+      background: rgba(12, 16, 26, 0.68);
+      border: 1px solid rgba(0, 240, 255, 0.18);
+      border-radius: 16px;
+      padding: 12px 18px;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55);
+      text-align: left;
+    }
+
+    .specs-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid rgba(0, 240, 255, 0.18);
+    }
+
+    .specs h3 {
+      font-size: 10.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--gold);
+    }
+
+    .specs-status {
+      font-size: 9px;
+      color: var(--arc-blue);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .specs-status::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--arc-blue);
+      box-shadow: 0 0 6px var(--arc-blue);
+    }
+
+    .spec-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 14px;
+      padding: 5px 0;
+    }
+
+    .spec-row + .spec-row {
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .spec-label {
+      font-size: 10.5px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--label);
+    }
+
+    .spec-value {
+      font-size: 11px;
+      color: var(--cream);
+      text-align: right;
+      white-space: nowrap;
+      font-weight: 500;
+    }
+
+    .spec-value.cyan-val {
+      color: var(--arc-blue);
+      text-shadow: 0 0 8px rgba(0, 240, 255, 0.4);
+    }
+
+    /* HINT OVERLAY - HIDDEN PER USER SPECIFICATION: DO NOT INDICATE MOUSE MOVEMENT */
+    .reveal-hint {
+      display: none !important;
+      opacity: 0 !important;
+      visibility: hidden !important;
+      pointer-events: none !important;
+    }
+
+    .suiting-flash {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 240, 255, 0.35);
+      mix-blend-mode: screen;
+      pointer-events: none;
+      z-index: 10;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .suiting-flash.active {
+      opacity: 1;
+    }
+
+    /* =========================================
+       PORTFOLIO CONTENT SECTIONS
+       ========================================= */
+    .section {
+      position: relative;
+      padding: 100px 48px;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      margin-bottom: 56px;
+      text-align: left;
+    }
+
+    .section-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--arc-blue);
+      margin-bottom: 10px;
+    }
+
+    .section-eyebrow::before {
+      content: '//';
+      color: var(--gold);
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 3.5vw, 2.7rem);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--cream);
+    }
+
+    .section-title span {
+      color: var(--gold);
+    }
+
+    .section-desc {
+      margin-top: 12px;
+      max-width: 650px;
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+
+    /* ABOUT GRID */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: stretch;
+    }
+
+    .about-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-blue);
+      border-radius: 20px;
+      padding: 36px;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .about-card h3 {
+      font-size: 20px;
+      color: var(--gold);
+      margin-bottom: 16px;
+      letter-spacing: 0.05em;
+    }
+
+    .about-card p {
+      font-size: 14.5px;
+      line-height: 1.7;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .highlight-pill {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 4px;
+      background: rgba(0, 240, 255, 0.1);
+      border: 1px solid rgba(0, 240, 255, 0.3);
+      color: var(--arc-blue);
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 13px;
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .stat-box {
+      background: rgba(12, 16, 26, 0.6);
+      border: 1px solid rgba(245, 179, 66, 0.2);
+      border-radius: 16px;
+      padding: 24px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .stat-box:hover {
+      border-color: var(--gold);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), 0 0 20px var(--gold-glow);
+    }
+
+    .stat-num {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--gold);
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .stat-label {
+      font-size: 11.5px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--arc-blue);
+      margin-top: 6px;
+    }
+
+    /* SKILLS MATRIX */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .skill-card {
+      background: var(--bg-card);
+      border: 1px solid rgba(245, 179, 66, 0.16);
+      border-radius: 18px;
+      padding: 28px;
+      backdrop-filter: blur(14px);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .skill-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--arc-blue));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .skill-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(245, 179, 66, 0.15);
+    }
+
+    .skill-card:hover::before {
+      opacity: 1;
+    }
+
+    .skill-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: rgba(0, 240, 255, 0.08);
+      border: 1px solid var(--border-blue);
+      display: grid;
+      place-items: center;
+      color: var(--arc-blue);
+      margin-bottom: 20px;
+    }
+
+    .skill-card h4 {
+      font-size: 16px;
+      color: var(--gold);
+      margin-bottom: 10px;
+      letter-spacing: 0.06em;
+    }
+
+    .skill-card p {
+      font-size: 13px;
+      line-height: 1.55;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill-tag {
+      font-size: 11px;
+      font-family: 'Share Tech Mono', monospace;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--cream);
+    }
+
+    /* PROJECTS SECTION */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 28px;
+    }
+
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-blue);
+      border-radius: 20px;
+      padding: 32px;
+      backdrop-filter: blur(16px);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .project-card:hover {
+      border-color: var(--arc-blue);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 30px var(--arc-glow);
+    }
+
+    .project-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+
+    .project-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 10px;
+      font-family: 'Share Tech Mono', monospace;
+      color: var(--gold);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0;
+    }
+
+    .project-live-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 9.5px;
+      font-family: 'Share Tech Mono', monospace;
+      color: var(--arc-blue);
+      background: rgba(0, 240, 255, 0.08);
+      border: 1px solid rgba(0, 240, 255, 0.25);
+      padding: 2px 8px;
+      border-radius: 999px;
+      letter-spacing: 0.08em;
+    }
+
+    .project-live-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #00F0FF;
+      box-shadow: 0 0 6px #00F0FF;
+      animation: pulseDot 1.5s infinite alternate;
+    }
+
+    .project-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--cream);
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+      line-height: 1.3;
+    }
+
+    .project-desc {
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-bottom: 22px;
+    }
+
+    .project-tech span {
+      font-size: 10.5px;
+      font-family: 'Share Tech Mono', monospace;
+      padding: 3px 9px;
+      border-radius: 4px;
+      background: rgba(0, 240, 255, 0.07);
+      border: 1px solid rgba(0, 240, 255, 0.2);
+      color: var(--arc-blue);
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11.5px;
+      font-weight: 600;
+      font-family: 'Share Tech Mono', monospace;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-decoration: none;
+      transition: all 0.25s ease;
+      background: rgba(245, 179, 66, 0.08);
+      border: 1px solid rgba(245, 179, 66, 0.3);
+      padding: 7px 16px;
+      border-radius: 999px;
+      align-self: flex-start;
+    }
+
+    .project-link:hover {
+      background: var(--gold);
+      color: #07090E;
+      box-shadow: 0 0 18px var(--gold-glow);
+      transform: translateY(-2px);
+      gap: 11px;
+    }
+
+    /* ==========================================
+       STACKED WINDOW TAB VIEW (EDUCATION & CERTIFICATIONS)
+       Inspired by stacked browser/OS windows with ● ● ● titlebars
+       ========================================== */
+    .window-deck-wrapper {
+      max-width: 960px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    /* Header bar with filters and window controls */
+    .deck-controls-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 26px;
+      padding: 12px 18px;
+      background: rgba(14, 19, 32, 0.7);
+      border: 1px solid rgba(0, 240, 255, 0.18);
+      border-radius: 14px;
+      backdrop-filter: blur(12px);
+    }
+
+    .deck-filter-pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .deck-pill {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--muted);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-family: 'Share Tech Mono', monospace;
+      letter-spacing: 0.06em;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .deck-pill:hover {
+      border-color: var(--arc-blue);
+      color: var(--cream);
+      background: rgba(0, 240, 255, 0.08);
+    }
+
+    .deck-pill.active {
+      background: rgba(0, 240, 255, 0.14);
+      border-color: var(--arc-blue);
+      color: var(--arc-blue);
+      box-shadow: 0 0 12px rgba(0, 240, 255, 0.25);
+    }
+
+    .deck-nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .deck-counter {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 12px;
+      color: var(--gold);
+      letter-spacing: 0.1em;
+      padding: 4px 10px;
+      background: rgba(245, 179, 66, 0.08);
+      border: 1px solid rgba(245, 179, 66, 0.25);
+      border-radius: 6px;
+    }
+
+    .deck-scroll-hint {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 10px;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .deck-nav-btn {
+      background: rgba(245, 179, 66, 0.08);
+      border: 1px solid rgba(245, 179, 66, 0.3);
+      color: var(--gold);
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 11px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .deck-nav-btn:hover {
+      background: var(--gold);
+      color: #07090E;
+      box-shadow: 0 0 14px var(--gold-glow);
+    }
+
+    /* 3D Stack Container matching Reference Image */
+    .window-stack-deck {
+      position: relative;
+      min-height: 480px;
+      perspective: 1200px;
+      perspective-origin: 50% 20%;
+      cursor: default;
+    }
+
+    /* Individual Window Card */
+    .stack-window-card {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(14, 19, 32, 0.95);
+      border: 1px solid rgba(0, 240, 255, 0.22);
+      border-radius: 18px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.75), 0 0 25px rgba(0, 240, 255, 0.08);
+      backdrop-filter: blur(20px);
+      overflow: hidden;
+      transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.45s ease, filter 0.45s ease, border-color 0.3s ease;
+      will-change: transform, opacity;
+    }
+
+    /* 3-Window Cascading Stack Layers */
+    .stack-window-card[data-depth="0"] {
+      transform: translate3d(0, 0, 0) scale(1);
+      opacity: 1;
+      z-index: 10;
+      pointer-events: auto;
+      border-color: rgba(0, 240, 255, 0.45);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85), 0 0 35px rgba(0, 240, 255, 0.16);
+    }
+
+    .stack-window-card[data-depth="1"] {
+      transform: translate3d(24px, -18px, -45px) scale(0.96);
+      opacity: 0.72;
+      z-index: 9;
+      pointer-events: auto;
+      filter: brightness(0.85);
+      border-color: rgba(245, 179, 66, 0.3);
+      cursor: pointer;
+    }
+
+    .stack-window-card[data-depth="2"] {
+      transform: translate3d(48px, -36px, -90px) scale(0.92);
+      opacity: 0.42;
+      z-index: 8;
+      pointer-events: auto;
+      filter: brightness(0.68);
+      border-color: rgba(255, 255, 255, 0.16);
+      cursor: pointer;
+    }
+
+    .stack-window-card[data-depth="hidden"] {
+      transform: translate3d(58px, -46px, -130px) scale(0.88);
+      opacity: 0;
+      z-index: 5;
+      pointer-events: none;
+    }
+
+    .stack-window-card[data-depth="previous"] {
+      transform: translate3d(-35px, 20px, 40px) scale(1.04);
+      opacity: 0;
+      z-index: 12;
+      pointer-events: none;
+    }
+
+    /* Titlebar of the OS Window */
+    .window-titlebar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 18px;
+      background: rgba(8, 12, 20, 0.9);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .window-dots {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .window-dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+    }
+
+    .window-dot-red { background: #FF5F56; box-shadow: 0 0 6px rgba(255, 95, 86, 0.5); }
+    .window-dot-yellow { background: #FFBD2E; box-shadow: 0 0 6px rgba(255, 189, 46, 0.5); }
+    .window-dot-green { background: #27C93F; box-shadow: 0 0 6px rgba(39, 201, 63, 0.5); }
+
+    .window-path {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 11.5px;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+    }
+
+    .window-badge {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      padding: 3px 9px;
+      border-radius: 6px;
+      background: rgba(0, 240, 255, 0.1);
+      color: var(--arc-blue);
+      border: 1px solid rgba(0, 240, 255, 0.3);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    /* Window Content Body */
+    .window-content {
+      padding: 32px 36px;
+    }
+
+    .window-category-tag {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 11px;
+      color: var(--arc-blue);
+      letter-spacing: 0.12em;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .window-category-tag .tag-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--arc-blue);
+      box-shadow: 0 0 8px var(--arc-blue);
+    }
+
+    .window-title {
+      font-size: 23px;
+      font-weight: 700;
+      color: var(--cream);
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .window-org {
+      font-size: 15px;
+      color: var(--gold);
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .window-desc {
+      font-size: 14px;
+      line-height: 1.65;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    .window-skills-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .window-skill-pill {
+      padding: 5px 12px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: 6px;
+      font-size: 11.5px;
+      color: var(--cream);
+      font-family: 'Share Tech Mono', monospace;
+      letter-spacing: 0.04em;
+    }
+
+    .window-footer-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    /* Stepper Dots */
+    .deck-stepper-dots {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 26px;
+    }
+
+    .stepper-dot {
+      width: 24px;
+      height: 5px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.15);
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .stepper-dot:hover {
+      background: rgba(0, 240, 255, 0.45);
+    }
+
+    .stepper-dot.active {
+      background: var(--arc-blue);
+      width: 44px;
+      box-shadow: 0 0 10px rgba(0, 240, 255, 0.6);
+    }
+
+    @media (max-width: 768px) {
+      .stack-window-card[data-depth="1"] {
+        transform: translate3d(12px, -12px, -30px) scale(0.96);
+      }
+      .stack-window-card[data-depth="2"] {
+        transform: translate3d(24px, -24px, -60px) scale(0.92);
+      }
+      .window-content {
+        padding: 22px 18px;
+      }
+      .window-title {
+        font-size: 18px;
+      }
+    }
+
+    /* =========================================
+       EDUCATION SECTION (ACADEMIC CREDENTIALS)
+       ========================================= */
+    .edu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 28px;
+      margin-top: 24px;
+    }
+
+    .edu-card {
+      background: rgba(14, 19, 32, 0.92);
+      border: 1px solid rgba(0, 240, 255, 0.22);
+      border-radius: 20px;
+      padding: 32px 30px;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.75), 0 0 25px rgba(0, 240, 255, 0.08);
+      transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .edu-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(0, 240, 255, 0.5);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85), 0 0 35px rgba(0, 240, 255, 0.18);
+    }
+
+    .edu-card-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .edu-card-path {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+    }
+
+    .edu-card-badge {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      padding: 3px 10px;
+      border-radius: 6px;
+      background: rgba(0, 240, 255, 0.1);
+      color: var(--arc-blue);
+      border: 1px solid rgba(0, 240, 255, 0.3);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .edu-card-tag {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 11px;
+      color: var(--gold);
+      letter-spacing: 0.12em;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .edu-card-tag .tag-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 8px var(--gold);
+    }
+
+    .edu-card-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--cream);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .edu-card-org {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--gold);
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+
+    .edu-card-desc {
+      font-size: 13.5px;
+      line-height: 1.65;
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+
+    .edu-card-skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .edu-skill-pill {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.04em;
+      padding: 5px 12px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: var(--cream);
+      transition: all 0.2s ease;
+    }
+
+    .edu-skill-pill:hover {
+      background: rgba(0, 240, 255, 0.12);
+      border-color: rgba(0, 240, 255, 0.4);
+      color: var(--arc-blue);
+    }
+
+    .edu-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    /* CONTACT / CONNECT SECTION */
+    .connect-card {
+      background: linear-gradient(135deg, rgba(14, 20, 32, 0.85) 0%, rgba(8, 11, 18, 0.95) 100%);
+      border: 1px solid var(--gold);
+      border-radius: 24px;
+      padding: 48px;
+      text-align: center;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(245, 179, 66, 0.12);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .connect-card::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 300px;
+      background: radial-gradient(ellipse at center, rgba(0, 240, 255, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .connect-card h3 {
+      font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+      color: var(--cream);
+      margin-bottom: 12px;
+    }
+
+    .connect-card h3 span {
+      color: var(--gold);
+    }
+
+    .connect-card p {
+      max-width: 580px;
+      margin: 0 auto 32px;
+      font-size: 14.5px;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+
+    .connect-actions {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 30px;
+      border-radius: 999px;
+      background: var(--gold);
+      color: #07090E;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      box-shadow: 0 0 25px var(--gold-glow);
+      transition: all 0.25s ease;
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-light);
+      box-shadow: 0 0 35px var(--gold);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 28px;
+      border-radius: 999px;
+      background: rgba(0, 240, 255, 0.08);
+      border: 1px solid var(--arc-blue);
+      color: var(--arc-blue);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: all 0.25s ease;
+    }
+
+    .btn-secondary:hover {
+      background: var(--arc-blue);
+      color: #07090E;
+      box-shadow: 0 0 25px var(--arc-glow);
+      transform: translateY(-2px);
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 36px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: var(--label);
+    }
+
+    footer a {
+      color: var(--arc-blue);
+      text-decoration: none;
+    }
+
+    /* ANIMATIONS & RESPONSIVE */
+    @keyframes heroImageIn {
+      from { opacity: 0; transform: translate(-50%, -50%) scale(1.08); }
+      to { opacity: 1; transform: translate(-50%, -50%) scale(1.18); }
+    }
+
+    .hero-image-animate {
+      opacity: 0;
+      animation: heroImageIn 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+      animation-delay: 0.15s;
+    }
+
+    @keyframes wordPullUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .pull-word {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .pull-word:not(:last-child) {
+      margin-right: 0.3em;
+    }
+
+    .words-visible .pull-word {
+      animation: wordPullUp 0.55s ease forwards;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); filter: blur(8px); }
+      to { opacity: 1; transform: translateY(0); filter: blur(0); }
+    }
+
+    .fade-up-reveal {
+      opacity: 0;
+      transform: translateY(14px);
+      filter: blur(8px);
+    }
+
+    .fade-up-reveal.is-visible {
+      animation: fadeUp 0.7s ease forwards;
+    }
+
+    @media (max-width: 1024px) {
+      .navbar { padding: 14px 28px; }
+      .hero-ui { padding: 80px 32px 36px; }
+      .hero-page { top: 80px; right: 32px; }
+      .specs { width: min(300px, 100%); }
+      .section { padding: 80px 32px; }
+      .about-grid, .edu-cert-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .navbar { padding: 12px 20px; }
+      .nav-links { display: none; }
+      .hero-ui {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr auto;
+        padding: 76px 20px 28px;
+      }
+      .hero-left { grid-column: 1; grid-row: 1 / 3; gap: 22px; }
+      .hero-page { top: 76px; right: 20px; }
+      .specs {
+        grid-column: 1;
+        grid-row: 3;
+        justify-self: stretch;
+        width: 100%;
+        margin-top: 8px;
+      }
+      .reveal-hint { bottom: 12px; font-size: 10px; }
+      .section { padding: 60px 20px; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .about-stats { grid-template-columns: 1fr; }
+      footer { flex-direction: column; gap: 12px; text-align: center; }
+    }
+
+    @media (max-height: 750px) {
+      .navbar {
+        padding: 8px 28px;
+      }
+      .hero-ui {
+        padding: 58px 28px 14px;
+      }
+      .hero-copy h1 {
+        font-size: clamp(2.0rem, 3.8vw, 3.5rem);
+        line-height: 0.98;
+      }
+      .hero-copy p {
+        font-size: 13px;
+        line-height: 1.5;
+        margin-top: 8px;
+        max-width: 520px;
+      }
+      .stark-tag {
+        font-size: 9px;
+        padding: 3px 8px;
+        margin-bottom: 5px;
+      }
+      .icon-row {
+        margin-top: 8px;
+        gap: 6px;
+      }
+      .icon-btn {
+        width: 30px;
+        height: 30px;
+      }
+      .product-card {
+        padding: 6px 10px;
+        grid-template-columns: 58px 1fr;
+        gap: 6px 10px;
+        width: min(300px, 100%);
+        border-radius: 12px;
+      }
+      .product-thumb {
+        width: 58px;
+        min-height: 58px;
+        border-radius: 8px;
+      }
+      .product-body h2 {
+        font-size: 9.5px;
+      }
+      .product-body p {
+        font-size: 9px;
+        line-height: 1.25;
+      }
+      .cart-btn {
+        padding: 3px 10px;
+        font-size: 9px;
+      }
+      .dossier-card {
+        padding: 8px 12px;
+        width: min(300px, 100%);
+        border-radius: 12px;
+      }
+      .dossier-desc {
+        font-size: 9.5px;
+        line-height: 1.35;
+        margin-bottom: 5px;
+      }
+      .dossier-metrics {
+        padding: 5px 8px;
+        margin-bottom: 5px;
+        gap: 3px;
+      }
+      .metric-row {
+        font-size: 9px;
+      }
+      .dossier-chip {
+        font-size: 8.5px;
+        padding: 1px 5px;
+      }
+      .specs {
+        padding: 8px 14px;
+        width: min(300px, 100%);
+        border-radius: 12px;
+      }
+      .spec-row {
+        padding: 3px 0;
+      }
+      .spec-label, .spec-value {
+        font-size: 9.5px;
+      }
+      .reveal-hint {
+        bottom: 6px;
+        padding: 4px 12px;
+        font-size: 9px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- TOP NAVIGATION BAR -->
+  <nav class="navbar" id="navbar">
+    <a href="#hero" class="nav-brand">
+      <div class="nav-logo-badge tech-mono">A</div>
+      <div class="nav-title">AJEESH I V <span>// AI DEV</span></div>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#hero" class="active">Suit Up</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <a href="https://www.linkedin.com/in/ajeesh-i-v?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="nav-cta tech-mono">
+      <span>LinkedIn</span>
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8">
+        <path d="M2.5 9.5l7-7M9.5 9.5V2.5H2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+    </a>
+  </nav>
+
+  <!-- GLOBAL HIGH-TECH STARK LAB ATMOSPHERIC BACKGROUND WITH LIVING TREE ROOTS -->
+  <div class="global-bg-fx" id="global-bg-fx" aria-hidden="true">
+    <div class="global-grid" id="global-grid"></div>
+    <canvas id="neural-roots-canvas" class="neural-roots-canvas"></canvas>
+  </div>
+
+  <!-- HERO SECTION WITH CHARACTER REVEAL -->
+  <main class="hero" id="hero">
+    <!-- SUIT UP PAGE CIRCLE ANIMATION (Hologram Rings, Arc Pulse & Pedestal) -->
+    <div class="hero-circle-fx" id="hero-circle-fx" aria-hidden="true">
+      <div class="hero-reactor-glow"></div>
+      <div class="hero-gold-glow"></div>
+      <div class="hero-pulse-wave"></div>
+      <div class="hero-hologram-rings">
+        <div class="hero-hologram-rings-inner"></div>
+        <div class="hero-hologram-rings-outer"></div>
+      </div>
+      <!-- Root nexus collar at base of circle connecting to roots below -->
+      <div class="hero-root-nexus"></div>
+    </div>
+
+    <!-- GROUNDING PEDESTAL -->
+    <div class="hero-pedestal" aria-hidden="true"></div>
+
+    <!-- BASE HERO IMAGE LAYER (Civilian Persona) -->
+    <div class="hero-base-img hero-image-animate" id="base-img" aria-label="Ajeesh I V - Civilian Persona"></div>
+
+    <!-- REVEAL HERO IMAGE SPOTLIGHT LAYER (Iron Man Armor Revealed On Cursor) -->
+    <div class="hero-reveal-img" id="reveal-img" aria-label="Ajeesh I V - Armor Suited State"></div>
+
+    <!-- REVEAL HUD ENERGY LAYER -->
+    <div class="hero-reveal-hud" id="reveal-hud"></div>
+
+    <!-- FULL SUITING FLASH EFFECT -->
+    <div class="suiting-flash" id="suiting-flash"></div>
+
+    <!-- INTERACTIVE CURSOR HUD SCANNER -->
+    <div class="cursor-scanner" id="cursor-scanner" aria-hidden="true"></div>
+
+    <!-- REVEAL INTERACTIVE HINT (Hidden as cursor tracking is disabled) -->
+    <div class="reveal-hint tech-mono" id="reveal-hint" style="display: none;">
+      <span style="display:inline-block; width:6px; height:6px; background:#00f0ff; border-radius:50%; box-shadow:0 0 6px #00f0ff;"></span>
+      MOVE CURSOR OVER CHARACTER TO INITIATE SUITING
+    </div>
+
+    <!-- UI Overlay Grid -->
+    <div class="hero-ui">
+      <!-- LEFT COLUMN -->
+      <section class="hero-left">
+        <div class="hero-copy">
+          <div class="stark-tag tech-mono fade-up-reveal" data-delay="0.3">
+            <span class="stark-tag-dot"></span>
+            NEURAL PROMPT & WEB ARCHITECT
+          </div>
+
+          <h1 class="words-pull-up">
+            <span class="pull-line">AJEESH I V //</span>
+            <span class="pull-line highlight-gold">AI PROMPT</span>
+            <span class="pull-line highlight-gold">ENG.</span>
+            <span class="pull-line highlight-crimson">& WEB</span>
+            <span class="pull-line highlight-crimson">DEVELOPER</span>
+          </h1>
+
+          <p class="fade-up-reveal" data-delay="0.5">
+            Engineering next-generation web applications powered by Large Language Models, Generative AI workflows, and cutting-edge interactive interfaces. Transforming complex prompts into intelligent software reality.
+          </p>
+
+          <div class="icon-row fade-up-reveal" data-delay="0.65">
+            <!-- Arc Reactor Core Button -->
+            <button class="icon-btn arc-btn" id="btn-target-arc" aria-label="Target Arc Reactor Core" type="button" title="Target Arc Reactor Core">
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="9" stroke-width="1.6"></circle>
+                <polygon points="12,6 17.5,15.5 6.5,15.5" stroke-width="1.4" fill="rgba(0,240,255,0.2)"></polygon>
+                <circle cx="12" cy="12.5" r="2.5" fill="currentColor"></circle>
+              </svg>
+            </button>
+            <!-- J.A.R.V.I.S. Helmet Core -->
+            <button class="icon-btn" id="btn-target-helmet" aria-label="Target Neural Helmet" type="button" title="Target J.A.R.V.I.S. Neural Core">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" stroke-linecap="round"></path>
+                <circle cx="12" cy="12" r="4" stroke-width="1.4"></circle>
+              </svg>
+            </button>
+            <!-- Repulsor Gauntlets -->
+            <button class="icon-btn" id="btn-target-repulsor" aria-label="Target Repulsor Gauntlets" type="button" title="Target Repulsor Gauntlets">
+              <svg viewBox="0 0 24 24">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke-linejoin="round" stroke-linecap="round"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- CORE SPECIALTY CARD (ALWAYS VISIBLE & COMPACT) -->
+        <article class="product-card fade-up-reveal" data-delay="0.85">
+          <div class="product-thumb" aria-hidden="true" style="background-image: url('assets/product_thumb.png');"></div>
+          <div class="product-body">
+            <h2 class="words-pull-up">CORE SPECIALTY</h2>
+            <p>Prompt engineering, LLM integration, and high-performance AI frontend architecture.</p>
+          </div>
+          <button class="cart-btn" id="btn-initiate-suiting" type="button">
+            <span id="suiting-btn-label">Iron Man Mode</span>
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M2.5 6h7M6.5 2.5l3.5 3.5-3.5 3.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </button>
+        </article>
+      </section>
+
+      <!-- RIGHT COLUMN (FILLED WITH COMPONENTS ABOUT AJEESH) -->
+      <section class="hero-right">
+        <!-- Top Right Badge -->
+        <div class="hero-page-badge fade-up-reveal" data-delay="0.75">
+          <div class="status-indicator">
+            <span class="status-dot"></span>
+            <span class="hero-page-code tech-mono" id="system-status-code" style="color: #F5B342;">AJEESH // CIVILIAN MODE</span>
+          </div>
+          <span class="hero-page-sub tech-mono">NAGERCOIL // TAMIL NADU, INDIA</span>
+        </div>
+
+        <!-- NEW COMPONENT: AGENT DOSSIER & METRICS -->
+        <div class="dossier-card fade-up-reveal" data-delay="0.9">
+          <div class="dossier-header">
+            <div class="dossier-tag tech-mono">
+              <span class="dossier-tag-dot"></span>
+              AGENT DOSSIER // PROFILE
+            </div>
+            <span class="dossier-pulse tech-mono">AVAILABLE</span>
+          </div>
+
+          <h4 class="dossier-title">AI Prompt & Web Architect</h4>
+          <p class="dossier-desc">
+            Scholar at <strong>S.T. Hindu College</strong>, Nagercoil. Specializing in autonomous LLM reasoning, few-shot prompt tuning, and high-frequency reactive web applications.
+          </p>
+
+          <!-- Real-Time Prompt Telemetry Bars -->
+          <div class="dossier-metrics">
+            <div class="metric-row">
+              <span class="metric-label tech-mono">Prompt Precision</span>
+              <span class="metric-val tech-mono">99.8%</span>
+            </div>
+            <div class="metric-track"><div class="metric-fill" style="width: 99%;"></div></div>
+
+            <div class="metric-row" style="margin-top: 6px;">
+              <span class="metric-label tech-mono">Reasoning Speed</span>
+              <span class="metric-val tech-mono">&lt; 120ms</span>
+            </div>
+            <div class="metric-track"><div class="metric-fill arc-fill" style="width: 94%;"></div></div>
+          </div>
+
+          <!-- Quick Skill Chips -->
+          <div class="dossier-chips">
+            <span class="dossier-chip">Chain-of-Thought</span>
+            <span class="dossier-chip">ReAct Loops</span>
+            <span class="dossier-chip">GenAI Pipelines</span>
+            <span class="dossier-chip">S.T. Hindu College</span>
+          </div>
+        </div>
+
+        <!-- Developer Telemetry Specs -->
+        <aside class="specs fade-up-reveal" data-delay="1.05">
+          <div class="specs-header">
+            <h3 class="words-pull-up">Developer Telemetry</h3>
+            <span class="specs-status tech-mono" id="specs-status-badge">Available</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-label">Primary Role</span>
+            <span class="spec-value cyan-val tech-mono">AI Prompt Engineer</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-label">Education</span>
+            <span class="spec-value">S.T. Hindu College</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-label">Domain</span>
+            <span class="spec-value tech-mono">GenAI & Next-Gen Web</span>
+          </div>
+          <div class="spec-row">
+            <span class="spec-label">Location</span>
+            <span class="spec-value cyan-val tech-mono">Nagercoil, TN, India</span>
+          </div>
+        </aside>
+      </section>
+    </div>
+  </main>
+
+  <!-- ABOUT ME SECTION -->
+  <section class="section" id="about">
+    <div class="section-cyber-aura" aria-hidden="true"></div>
+    <div class="section-header">
+      <div class="section-eyebrow tech-mono">Biometric Profile</div>
+      <h2 class="section-title">About <span>Ajeesh I V</span></h2>
+      <p class="section-desc">Bridging the frontier between artificial intelligence reasoning and intuitive, lightning-fast web experiences.</p>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-card">
+        <div>
+          <h3>AI Prompt Engineer & Next-Gen Web Developer</h3>
+          <p>
+            I am <strong style="color:var(--gold);">Ajeesh I V</strong>, an AI Prompt Engineer and Web Developer from Nagercoil, Tamil Nadu, India. Educated at <span class="highlight-pill">S.T. Hindu College</span>, I specialize in crafting intelligent applications that leverage the full potential of Large Language Models (LLMs) and modern web architectures.
+          </p>
+          <p>
+            My work is driven by a deep conviction: AI isn't just a backend tool—it's an interactive partner that redefines how users perceive and interact with software. From precision prompt design and multi-step reasoning chains to high-frequency reactive web frontends, I build software that feels as seamless and responsive as second nature.
+          </p>
+        </div>
+        <div style="margin-top:20px; display:flex; gap:12px; flex-wrap:wrap;">
+          <a href="#projects" class="btn-primary">View Projects</a>
+          <a href="https://www.linkedin.com/in/ajeesh-i-v?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="btn-secondary">LinkedIn Profile</a>
+        </div>
+      </div>
+
+      <div class="about-stats">
+        <div class="stat-box">
+          <div class="stat-num tech-mono">1K+</div>
+          <div class="stat-label">LinkedIn Community</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num tech-mono">100%</div>
+          <div class="stat-label">GenAI & LLM Focus</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num tech-mono">AI</div>
+          <div class="stat-label">Prompt Engineering</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num tech-mono">WEB</div>
+          <div class="stat-label">Next-Gen Interface Dev</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS MATRIX -->
+  <section class="section" id="skills">
+    <div class="section-cyber-aura" aria-hidden="true"></div>
+    <div class="section-header">
+      <div class="section-eyebrow tech-mono">System Capabilities</div>
+      <h2 class="section-title">Core <span>Skills & Stack</span></h2>
+      <p class="section-desc">A fusion of artificial intelligence architecture, algorithmic prompt design, and state-of-the-art web technology.</p>
+    </div>
+
+    <div class="skills-grid">
+      <!-- Card 1 -->
+      <div class="skill-card">
+        <div class="skill-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" stroke-linecap="round"></path>
+            <circle cx="12" cy="12" r="4"></circle>
+          </svg>
+        </div>
+        <h4>AI Prompt Engineering</h4>
+        <p>Architecting multi-modal prompts, Chain-of-Thought (CoT), few-shot framing, and strict structured JSON schemas for production models.</p>
+        <div class="skill-tags">
+          <span class="skill-tag">System Prompting</span>
+          <span class="skill-tag">Chain-of-Thought</span>
+          <span class="skill-tag">ReAct Framework</span>
+          <span class="skill-tag">Evaluation</span>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="skill-card">
+        <div class="skill-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="12" r="9"></circle>
+            <polygon points="12,6 17.5,15.5 6.5,15.5" fill="rgba(0,240,255,0.2)"></polygon>
+            <circle cx="12" cy="12.5" r="2.5" fill="currentColor"></circle>
+          </svg>
+        </div>
+        <h4>LLM Integration & Orchestration</h4>
+        <p>Connecting state-of-the-art language models into reactive web applications, agent loops, context pipelines, and autonomous workflows.</p>
+        <div class="skill-tags">
+          <span class="skill-tag">OpenAI & Anthropic</span>
+          <span class="skill-tag">Gemini API</span>
+          <span class="skill-tag">Agentic Loops</span>
+          <span class="skill-tag">Tool Calling</span>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="skill-card">
+        <div class="skill-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <polyline points="16 18 22 12 16 6"></polyline>
+            <polyline points="8 6 2 12 8 18"></polyline>
+          </svg>
+        </div>
+        <h4>Next-Gen Web Development</h4>
+        <p>Crafting sleek, high-aesthetic web interfaces with vanilla CSS, modern JavaScript, interactive canvas effects, and responsive design systems.</p>
+        <div class="skill-tags">
+          <span class="skill-tag">HTML5 & Semantic DOM</span>
+          <span class="skill-tag">Modern Vanilla CSS</span>
+          <span class="skill-tag">ES6+ JavaScript</span>
+          <span class="skill-tag">Glassmorphism</span>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="skill-card">
+        <div class="skill-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+          </svg>
+        </div>
+        <h4>Interactive UX & Micro-Animations</h4>
+        <p>Implementing dynamic cursor-tracking spotlights, SVG filters, real-time mask operations, and hardware-accelerated transitions.</p>
+        <div class="skill-tags">
+          <span class="skill-tag">CSS Masks & Shaders</span>
+          <span class="skill-tag">Spotlight Reveal</span>
+          <span class="skill-tag">Web Audio API</span>
+          <span class="skill-tag">IntersectionObserver</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section class="section" id="projects">
+    <div class="section-cyber-aura" aria-hidden="true"></div>
+    <div class="section-header">
+      <div class="section-eyebrow tech-mono">Deployment Archive</div>
+      <h2 class="section-title">Featured <span>Projects</span></h2>
+      <p class="section-desc">A curated archive of AI engines, interactive web apps, enterprise systems, and creative tools deployed by Ajeesh I V.</p>
+    </div>
+
+    <div class="projects-grid">
+      <!-- Project 1: Fridge to Fork -->
+      <article class="project-card">
+        <div>
+          <div class="project-header-row">
+            <span class="project-badge">DEPLOYMENT // 01</span>
+            <span class="project-live-tag"><span class="project-live-dot"></span> LIVE APP</span>
+          </div>
+          <h3 class="project-title">Fridge to Fork — AI Recipe Generator</h3>
+          <p class="project-desc">
+            An intelligent smart-kitchen assistant that converts random leftover fridge ingredients into instant gourmet recipes with step-by-step cooking methods, zero food waste, and nutrition insights.
+          </p>
+          <div class="project-tech">
+            <span>React</span>
+            <span>Vite</span>
+            <span>Generative AI</span>
+            <span>Tailwind CSS</span>
+            <span>JetBrains Mono</span>
+          </div>
+        </div>
+        <a href="https://canaicook.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link">
+          <span>Launch App</span>
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M2.5 9.5l7-7M9.5 9.5V2.5H2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </a>
+      </article>
+
+      <!-- Project 2: TypeBlast -->
+      <article class="project-card">
+        <div>
+          <div class="project-header-row">
+            <span class="project-badge">DEPLOYMENT // 02</span>
+            <span class="project-live-tag"><span class="project-live-dot"></span> LIVE APP</span>
+          </div>
+          <h3 class="project-title">TypeBlast — Speed Typing Arcade</h3>
+          <p class="project-desc">
+            An exhilarating retro-arcade typing speed challenge that gamifies typing mastery with real-time Words Per Minute (WPM) tracking, accuracy metrics, and dynamic difficulty progression.
+          </p>
+          <div class="project-tech">
+            <span>React</span>
+            <span>TypeScript</span>
+            <span>Tailwind CSS</span>
+            <span>Game Loop</span>
+            <span>State Machine</span>
+          </div>
+        </div>
+        <a href="https://typing-game-one-dun.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link">
+          <span>Play Game</span>
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M2.5 9.5l7-7M9.5 9.5V2.5H2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </a>
+      </article>
+
+      <!-- Project 3: AETHER Messenger -->
+      <article class="project-card">
+        <div>
+          <div class="project-header-row">
+            <span class="project-badge">DEPLOYMENT // 03</span>
+            <span class="project-live-tag"><span class="project-live-dot"></span> LIVE APP</span>
+          </div>
+          <h3 class="project-title">AETHER — Neo-Obsidian Encrypted Messenger</h3>
+          <p class="project-desc">
+            A next-generation privacy-first real-time 1-to-1 encrypted messaging application featuring live voice notes, rich media exchange, instant read receipts, emoji reactions, and an obsidian-glass aesthetic.
+          </p>
+          <div class="project-tech">
+            <span>React</span>
+            <span>WebSockets</span>
+            <span>Realtime DB</span>
+            <span>Web Audio API</span>
+            <span>E2E Security</span>
+          </div>
+        </div>
+        <a href="https://aether-messager-app.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link">
+          <span>Open Messenger</span>
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M2.5 9.5l7-7M9.5 9.5V2.5H2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </a>
+      </article>
+
+      <!-- Project 4: A2A Computers -->
+      <article class="project-card">
+        <div>
+          <div class="project-header-row">
+            <span class="project-badge">DEPLOYMENT // 04</span>
+            <span class="project-live-tag"><span class="project-live-dot"></span> LIVE APP</span>
+          </div>
+          <h3 class="project-title">A2A Computers — Enterprise Operations & POS</h3>
+          <p class="project-desc">
+            A full-scale commercial operations console for computer hardware retail, featuring an AI diagnostic repair center, Kanban workshop pipeline, POS cashier, SheetJS Excel database sync, and employee attendance tracking.
+          </p>
+          <div class="project-tech">
+            <span>Vanilla JS</span>
+            <span>SheetJS Database</span>
+            <span>Chart.js</span>
+            <span>Glassmorphism</span>
+            <span>Kanban Pipeline</span>
+          </div>
+        </div>
+        <a href="https://a2acomputers.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-link">
+          <span>Launch Console</span>
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M2.5 9.5l7-7M9.5 9.5V2.5H2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </a>
+      </article>
+
+      <!-- Project 5: CardCraft AI -->
+      <article class="project-card">
+        <div>
+          <div class="project-header-row">
+            <span class="project-badge">DEPLOYMENT // 05</span>
+            <span class="project-live-tag"><span class="project-live-dot"></span> LIVE APP</span>
+          </div>
+          <h3 class="project-title">CardCraft AI — Smart Invitation & Card Studio</h3>
+          <p class="project-desc">
+            An AI-driven design studio for generating bespoke wedding invitations, birthday cards, housewarming announcements, and professional visiting cards with 1,000+ modern templates and instant high-res export.
+          </p>
+          <div class="project-tech">
+            <span>React</span>
+            <span>Generative Design AI</span>
+            <span>Tailwind CSS</span>
+            <span>Canvas Export</span>
+            <span>Lovable</span>
+          </div>
+        </div>
+        <a href="https://card-creation-ai.lovable.app/" target="_blank" rel="noopener noreferrer" class="project-link">
+          <span>Create Cards</span>
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M2.5 9.5l7-7M9.5 9.5V2.5H2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </a>
+      </article>
+
+      <!-- Project 6: Mag AI -->
+      <article class="project-card">
+        <div>
+          <div class="project-header-row">
+            <span class="project-badge">DEPLOYMENT // 06</span>
+            <span class="project-live-tag"><span class="project-live-dot"></span> LIVE APP</span>
+          </div>
+          <h3 class="project-title">Mag AI — Magazine Maker & Layout Engine</h3>
+          <p class="project-desc">
+            An intelligent digital publishing platform that auto-formats photos, articles, and personal stories into publication-grade magazine layouts across wedding, travel, lifestyle, and culture themes.
+          </p>
+          <div class="project-tech">
+            <span>React</span>
+            <span>AI Editorial Engine</span>
+            <span>Multi-Page Layout</span>
+            <span>PDF Export</span>
+            <span>Lovable</span>
+          </div>
+        </div>
+        <a href="https://mag-ai-magazine-maker.lovable.app" target="_blank" rel="noopener noreferrer" class="project-link">
+          <span>Open Maker</span>
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M2.5 9.5l7-7M9.5 9.5V2.5H2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </a>
+      </article>
+
+      <!-- Project 7: Game Zone -->
+      <article class="project-card">
+        <div>
+          <div class="project-header-row">
+            <span class="project-badge">DEPLOYMENT // 07</span>
+            <span class="project-live-tag"><span class="project-live-dot"></span> LIVE APP</span>
+          </div>
+          <h3 class="project-title">Game Zone — Modern Web Arcade Portal</h3>
+          <p class="project-desc">
+            A curated, high-performance web gaming hub aggregating popular multiplayer FPS, .io battle arenas, retro arcade classics, and puzzle games with responsive embedded game viewports and category filtering.
+          </p>
+          <div class="project-tech">
+            <span>React</span>
+            <span>Vite</span>
+            <span>iFrame Sandbox</span>
+            <span>Responsive Grid</span>
+            <span>Lovable</span>
+          </div>
+        </div>
+        <a href="https://geme-zone.lovable.app" target="_blank" rel="noopener noreferrer" class="project-link">
+          <span>Enter Arcade</span>
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M2.5 9.5l7-7M9.5 9.5V2.5H2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </a>
+      </article>
+    </div>
+  </section>
+
+  <!-- EDUCATION SECTION -->
+  <section class="section" id="education">
+    <div class="section-cyber-aura" aria-hidden="true"></div>
+    <div class="section-header">
+      <div class="section-eyebrow tech-mono">Academic Foundation</div>
+      <h2 class="section-title">Academic <span>Education</span></h2>
+      <p class="section-desc">Formal collegiate computational foundation and continuous research specialization in computer science, algorithms, and artificial intelligence.</p>
+    </div>
+
+    <div class="edu-grid">
+      <!-- Education Card 1: S.T. Hindu College -->
+      <article class="edu-card" id="edu-card-1">
+        <div>
+          <div class="edu-card-topbar">
+            <div class="edu-card-path">STARK_OS // ACADEMIC / S.T._HINDU_COLLEGE.SYS</div>
+            <span class="edu-card-badge">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              AUTHENTICATED
+            </span>
+          </div>
+
+          <div class="edu-card-tag">
+            <span class="tag-dot"></span>
+            COLLEGIATE STUDIES // FOUNDATIONAL DEGREE
+          </div>
+
+          <h3 class="edu-card-title">Higher Education in Computational Studies</h3>
+          
+          <div class="edu-card-org">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+              <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+            </svg>
+            <span>S.T. Hindu College, Nagercoil, Tamil Nadu, India</span>
+          </div>
+
+          <p class="edu-card-desc">
+            Rigorous collegiate curriculum focused on computational logic, discrete mathematical modeling, algorithm analysis, algorithmic thinking, and structural problem-solving paradigms for high-performance software engineering.
+          </p>
+
+          <div class="edu-card-skills">
+            <span class="edu-skill-pill">S.T. Hindu College</span>
+            <span class="edu-skill-pill">Computational Logic</span>
+            <span class="edu-skill-pill">Algorithms</span>
+            <span class="edu-skill-pill">Data Structures</span>
+            <span class="edu-skill-pill">Problem Solving</span>
+            <span class="edu-skill-pill">Nagercoil</span>
+          </div>
+        </div>
+
+        <div class="edu-card-footer">
+          <span>LOCATION: NAGERCOIL, TN, INDIA</span>
+          <span>NODE ID: EDU-01 // VERIFIED</span>
+        </div>
+      </article>
+
+      <!-- Education Card 2: Advanced AI Engineering -->
+      <article class="edu-card" id="edu-card-2">
+        <div>
+          <div class="edu-card-topbar">
+            <div class="edu-card-path">STARK_OS // RESEARCH / AI_WEB_ENGINEERING.SYS</div>
+            <span class="edu-card-badge">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              ACTIVE RESEARCH
+            </span>
+          </div>
+
+          <div class="edu-card-tag">
+            <span class="tag-dot"></span>
+            CONTINUOUS RESEARCH // ADVANCED SPECIALIZATION
+          </div>
+
+          <h3 class="edu-card-title">Advanced AI & Next-Gen Web Engineering</h3>
+          
+          <div class="edu-card-org">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+            <span>Autonomous Research & Developer Communities</span>
+          </div>
+
+          <p class="edu-card-desc">
+            Intensive self-directed specialization exploring production Large Language Model architectures, token-efficient prompt calibration, agentic function execution, zero/few-shot optimization, and reactive front-end performance tuning.
+          </p>
+
+          <div class="edu-card-skills">
+            <span class="edu-skill-pill">LLM Architectures</span>
+            <span class="edu-skill-pill">Token Economics</span>
+            <span class="edu-skill-pill">Agent Frameworks</span>
+            <span class="edu-skill-pill">Reactive Frontends</span>
+            <span class="edu-skill-pill">Modern Web</span>
+          </div>
+        </div>
+
+        <div class="edu-card-footer">
+          <span>DOMAIN: GENAI & FULL-STACK</span>
+          <span>NODE ID: EDU-02 // CONTINUOUS</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS SECTION -->
+  <section class="section" id="certifications">
+    <div class="section-cyber-aura" aria-hidden="true"></div>
+    <div class="section-header">
+      <div class="section-eyebrow tech-mono">Technical Accreditations</div>
+      <h2 class="section-title">Certifications & <span>Credentials</span></h2>
+      <p class="section-desc">Industry-recognized professional certifications from Anthropic Claude Academy, Google Cloud Vertex AI, MongoDB University, and STEM.</p>
+    </div>
+
+    <div class="window-deck-wrapper" id="window-deck-wrapper">
+      <!-- Deck Header Bar: Filter Pills, Counter & Actions -->
+      <div class="deck-controls-header">
+        <div class="deck-filter-pills" role="tablist">
+          <button class="deck-pill active" data-filter="all" role="tab">ALL CREDENTIALS (07)</button>
+          <button class="deck-pill" data-filter="ai" role="tab">AI & LLM (04)</button>
+          <button class="deck-pill" data-filter="web" role="tab">WEB & DATABASE (03)</button>
+        </div>
+
+        <div class="deck-nav-actions">
+          <span class="deck-scroll-hint">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 3v18M18 9l-6-6-6 6M18 15l-6 6-6-6"/>
+            </svg>
+            SCROLL ON WINDOW TO FLIP
+          </span>
+          <span class="deck-counter" id="deck-counter">01 / 07</span>
+          <button class="deck-nav-btn" id="deck-prev-btn" aria-label="Previous Window">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+            PREV
+          </button>
+          <button class="deck-nav-btn" id="deck-next-btn" aria-label="Next Window">
+            NEXT
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- 3D Window Stack Deck: Cascading Stacked Windows matching Reference Image -->
+      <div class="window-stack-deck" id="window-stack-deck" aria-live="polite">
+        <!-- Window 1: Claude Academy -->
+        <article class="stack-window-card" data-depth="0" data-category="ai" id="win-card-0">
+          <div class="window-titlebar">
+            <div class="window-dots" aria-hidden="true">
+              <span class="window-dot window-dot-red"></span>
+              <span class="window-dot window-dot-yellow"></span>
+              <span class="window-dot window-dot-green"></span>
+            </div>
+            <div class="window-path">STARK_OS // CERTIFICATIONS / ANTHROPIC_CLAUDE.CRT</div>
+            <span class="window-badge">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              ANTHROPIC CERTIFIED
+            </span>
+          </div>
+          <div class="window-content">
+            <div class="window-category-tag">
+              <span class="tag-dot"></span>
+              ANTHROPIC AI // CLAUDE ACADEMY
+            </div>
+            <h3 class="window-title">Claude Academy: Introduction to Claude Cowork</h3>
+            <div class="window-org">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="8" r="7"></circle>
+                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+              </svg>
+              <span>Anthropic AI Specialized Training Program</span>
+            </div>
+            <p class="window-desc">
+              Mastery over Claude 3.5 & 3.7 model architecture, system prompt calibration, artifact generation workflows, advanced multi-turn reasoning chains, tool orchestration, and human-AI collaborative co-work paradigms.
+            </p>
+            <div class="window-skills-wrap">
+              <span class="window-skill-pill">Claude 3.7 Sonnet</span>
+              <span class="window-skill-pill">System Prompts</span>
+              <span class="window-skill-pill">Artifact Workflows</span>
+              <span class="window-skill-pill">Tool Calling</span>
+              <span class="window-skill-pill">Co-Work Paradigms</span>
+            </div>
+            <div class="window-footer-bar">
+              <span>ISSUER: ANTHROPIC AI ACADEMY</span>
+              <span>CREDENTIAL ID: ANTH-COWORK-882</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Window 2: Vertex AI Skill Badge -->
+        <article class="stack-window-card" data-depth="1" data-category="ai" id="win-card-1">
+          <div class="window-titlebar">
+            <div class="window-dots" aria-hidden="true">
+              <span class="window-dot window-dot-red"></span>
+              <span class="window-dot window-dot-yellow"></span>
+              <span class="window-dot window-dot-green"></span>
+            </div>
+            <div class="window-path">STARK_OS // CERTIFICATIONS / GOOGLE_VERTEX_AI.CRT</div>
+            <span class="window-badge">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              GCP SKILL BADGE
+            </span>
+          </div>
+          <div class="window-content">
+            <div class="window-category-tag">
+              <span class="tag-dot"></span>
+              GOOGLE CLOUD // ENTERPRISE GENAI
+            </div>
+            <h3 class="window-title">Prompt Design in Vertex AI Skill Badge</h3>
+            <div class="window-org">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+              <span>Google Cloud Skills Boost</span>
+            </div>
+            <p class="window-desc">
+              Designing, evaluating, and fine-tuning enterprise multimodal prompts on Google Vertex AI. Precision tuning of temperature, top-k, and top-p hyper-parameters with grounded citations, few-shot examples, and deterministic structured outputs.
+            </p>
+            <div class="window-skills-wrap">
+              <span class="window-skill-pill">Google Cloud Vertex AI</span>
+              <span class="window-skill-pill">Multimodal Prompts</span>
+              <span class="window-skill-pill">Hyperparameter Tuning</span>
+              <span class="window-skill-pill">Grounded AI</span>
+              <span class="window-skill-pill">Gemini Models</span>
+            </div>
+            <div class="window-footer-bar">
+              <span>ISSUER: GOOGLE CLOUD</span>
+              <span>BADGE VERIFIED // ID: GCP-VAI-2026</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Window 3: CRUD Operations in MongoDB -->
+        <article class="stack-window-card" data-depth="2" data-category="web" id="win-card-2">
+          <div class="window-titlebar">
+            <div class="window-dots" aria-hidden="true">
+              <span class="window-dot window-dot-red"></span>
+              <span class="window-dot window-dot-yellow"></span>
+              <span class="window-dot window-dot-green"></span>
+            </div>
+            <div class="window-path">STARK_OS // CERTIFICATIONS / MONGODB_CRUD.CRT</div>
+            <span class="window-badge">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              DATABASE CERTIFIED
+            </span>
+          </div>
+          <div class="window-content">
+            <div class="window-category-tag">
+              <span class="tag-dot"></span>
+              DATABASE ENGINEERING // NOSQL
+            </div>
+            <h3 class="window-title">CRUD Operations in MongoDB</h3>
+            <div class="window-org">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+              </svg>
+              <span>MongoDB University</span>
+            </div>
+            <p class="window-desc">
+              Designing robust document schemas, high-efficiency create-read-update-delete data pipelines, compound indexing strategies, aggregation frameworks, and resilient NoSQL database architectures for modern data-driven web applications.
+            </p>
+            <div class="window-skills-wrap">
+              <span class="window-skill-pill">MongoDB Atlas</span>
+              <span class="window-skill-pill">Aggregation Pipeline</span>
+              <span class="window-skill-pill">Compound Indexing</span>
+              <span class="window-skill-pill">Document Schema</span>
+              <span class="window-skill-pill">CRUD Security</span>
+            </div>
+            <div class="window-footer-bar">
+              <span>ISSUER: MONGODB UNIVERSITY</span>
+              <span>VERIFIED // ID: MDB-CRUD-941</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Window 4: STEM Digital Applications -->
+        <article class="stack-window-card" data-depth="hidden" data-category="web" id="win-card-3">
+          <div class="window-titlebar">
+            <div class="window-dots" aria-hidden="true">
+              <span class="window-dot window-dot-red"></span>
+              <span class="window-dot window-dot-yellow"></span>
+              <span class="window-dot window-dot-green"></span>
+            </div>
+            <div class="window-path">STARK_OS // CERTIFICATIONS / STEM_FUNDAMENTALS.CRT</div>
+            <span class="window-badge">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              STEM CERTIFIED
+            </span>
+          </div>
+          <div class="window-content">
+            <div class="window-category-tag">
+              <span class="tag-dot"></span>
+              SCIENCE & TECHNOLOGY // FOUNDATIONAL
+            </div>
+            <h3 class="window-title">Digital Application Fundamentals (STEM)</h3>
+            <div class="window-org">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+              </svg>
+              <span>STEM Certified Curriculum Track</span>
+            </div>
+            <p class="window-desc">
+              Core computational algorithms, discrete mathematical logic, web standard protocols, data manipulation structures, and responsive software systems architecture tailored for real-world digital engineering challenges.
+            </p>
+            <div class="window-skills-wrap">
+              <span class="window-skill-pill">STEM Foundations</span>
+              <span class="window-skill-pill">Data Structures</span>
+              <span class="window-skill-pill">Web Protocols</span>
+              <span class="window-skill-pill">Mathematical Logic</span>
+              <span class="window-skill-pill">Software Systems</span>
+            </div>
+            <div class="window-footer-bar">
+              <span>ISSUER: STEM ACCREDITED</span>
+              <span>VERIFIED // ID: STEM-DAF-102</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Window 5: Prompt Engineering for Generative AI -->
+        <article class="stack-window-card" data-depth="hidden" data-category="ai" id="win-card-4">
+          <div class="window-titlebar">
+            <div class="window-dots" aria-hidden="true">
+              <span class="window-dot window-dot-red"></span>
+              <span class="window-dot window-dot-yellow"></span>
+              <span class="window-dot window-dot-green"></span>
+            </div>
+            <div class="window-path">STARK_OS // CERTIFICATIONS / PROMPT_GENAI.CRT</div>
+            <span class="window-badge">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              AI SPECIALIST
+            </span>
+          </div>
+          <div class="window-content">
+            <div class="window-category-tag">
+              <span class="tag-dot"></span>
+              PROMPT ENGINEERING // FOUNDATION MODELS
+            </div>
+            <h3 class="window-title">Prompt Engineering for Generative AI</h3>
+            <div class="window-org">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+              <span>Generative AI Engineering Track</span>
+            </div>
+            <p class="window-desc">
+              Advanced prompt structuring patterns including chain-of-thought, directional stimulus prompting, self-consistency loops, and system-level jailbreak defense calibrations for production deployment.
+            </p>
+            <div class="window-skills-wrap">
+              <span class="window-skill-pill">Chain-of-Thought</span>
+              <span class="window-skill-pill">Context Framing</span>
+              <span class="window-skill-pill">Few-Shot Reasoning</span>
+              <span class="window-skill-pill">Hallucination Mitigation</span>
+              <span class="window-skill-pill">System Constraints</span>
+            </div>
+            <div class="window-footer-bar">
+              <span>SPECIALIZATION: PROMPT ARCHITECTURE</span>
+              <span>VERIFIED // ID: PE-GAI-501</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Window 6: Modern Responsive Web Development -->
+        <article class="stack-window-card" data-depth="hidden" data-category="web" id="win-card-5">
+          <div class="window-titlebar">
+            <div class="window-dots" aria-hidden="true">
+              <span class="window-dot window-dot-red"></span>
+              <span class="window-dot window-dot-yellow"></span>
+              <span class="window-dot window-dot-green"></span>
+            </div>
+            <div class="window-path">STARK_OS // CERTIFICATIONS / WEB_ENGINEERING.CRT</div>
+            <span class="window-badge">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              WEB ARCHITECT
+            </span>
+          </div>
+          <div class="window-content">
+            <div class="window-category-tag">
+              <span class="tag-dot"></span>
+              FRONTEND SYSTEMS // PERFORMANCE
+            </div>
+            <h3 class="window-title">Modern Responsive Web Development</h3>
+            <div class="window-org">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+              <span>Modern Web Architecture</span>
+            </div>
+            <p class="window-desc">
+              Building ultra-responsive, accessible, and high-FPS web interfaces with semantic markup, advanced CSS layout engines (Grid & Flexbox), smooth GPU animations, and modular ES6+ JavaScript.
+            </p>
+            <div class="window-skills-wrap">
+              <span class="window-skill-pill">CSS Grid & Flexbox</span>
+              <span class="window-skill-pill">Semantic HTML5</span>
+              <span class="window-skill-pill">GPU Transitions</span>
+              <span class="window-skill-pill">Async Event Loops</span>
+              <span class="window-skill-pill">Responsive Design</span>
+            </div>
+            <div class="window-footer-bar">
+              <span>DOMAIN: RESPONSIVE ARCHITECTURE</span>
+              <span>VERIFIED // ID: WEB-DEV-330</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Window 7: LLM Integration -->
+        <article class="stack-window-card" data-depth="hidden" data-category="ai" id="win-card-6">
+          <div class="window-titlebar">
+            <div class="window-dots" aria-hidden="true">
+              <span class="window-dot window-dot-red"></span>
+              <span class="window-dot window-dot-yellow"></span>
+              <span class="window-dot window-dot-green"></span>
+            </div>
+            <div class="window-path">STARK_OS // CERTIFICATIONS / LLM_INTEGRATION.CRT</div>
+            <span class="window-badge">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              AI INTEGRATION SPEC
+            </span>
+          </div>
+          <div class="window-content">
+            <div class="window-category-tag">
+              <span class="tag-dot"></span>
+              AI APPLICATION ENGINEERING // AGENTS
+            </div>
+            <h3 class="window-title">Large Language Models (LLM) Integration</h3>
+            <div class="window-org">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+              <span>AI Application Engineering</span>
+            </div>
+            <p class="window-desc">
+              Integrating cutting-edge APIs, vector search logic, agentic function calling, autonomous tool loops, and structured prompt workflows into seamless end-to-end applications that bridge intelligence with practical user utility.
+            </p>
+            <div class="window-skills-wrap">
+              <span class="window-skill-pill">Agentic Tool Loops</span>
+              <span class="window-skill-pill">Vector Search</span>
+              <span class="window-skill-pill">API Integration</span>
+              <span class="window-skill-pill">Context Pipelines</span>
+              <span class="window-skill-pill">Autonomous Systems</span>
+            </div>
+            <div class="window-footer-bar">
+              <span>SPECIALIZATION: AGENTIC INTEGRATION</span>
+              <span>VERIFIED // ID: LLM-INT-770</span>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Stepper Progress Dots -->
+      <div class="deck-stepper-dots" id="deck-stepper-dots" aria-label="Deck Page Indicators"></div>
+    </div>
+  </section>
+
+  <!-- CONNECT & CONTACT -->
+  <section class="section" id="contact">
+    <div class="section-cyber-aura" aria-hidden="true"></div>
+    <div class="connect-card">
+      <div class="stark-tag tech-mono" style="margin-bottom:18px;">
+        <span class="stark-tag-dot"></span>
+        UPLINK OPEN // INITIATE COLLABORATION
+      </div>
+
+      <h3>Let's Build the <span>Next Generation</span> Together</h3>
+      <p>
+        Whether you are looking for an <strong>AI Prompt Engineer</strong> to optimize your model workflows or a <strong>Web Developer</strong> to build an unforgettable, high-performance web application, I'm ready to bring your vision to life.
+      </p>
+
+      <div class="connect-actions">
+        <a href="https://www.linkedin.com/in/ajeesh-i-v?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="btn-primary">
+          <span>Connect on LinkedIn</span>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M3 7h8M7 3l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </a>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=dev.ajeesh.iv@gmail.com&su=Collaboration%20Inquiry%20//%20Ajeesh%20I%20V" target="_blank" rel="noopener noreferrer" class="btn-secondary" id="btn-send-mail">
+          <span>Send Mail</span>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M2 3h10v8H2zM2 3l5 4 5-4" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </a>
+      </div>
+
+      <div style="margin-top:20px; font-size:12px; color:var(--arc-blue); font-family:'Share Tech Mono', monospace; letter-spacing:0.06em;">
+        DIRECT TRANSMISSION // <a href="https://mail.google.com/mail/?view=cm&fs=1&to=dev.ajeesh.iv@gmail.com&su=Collaboration%20Inquiry%20//%20Ajeesh%20I%20V" target="_blank" rel="noopener noreferrer" style="color:var(--gold); text-decoration:none; border-bottom:1px dashed var(--gold);">dev.ajeesh.iv@gmail.com</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>
+      © 2026 <strong>AJEESH I V</strong>. All rights reserved. S.T. Hindu College, Nagercoil, India.
+    </div>
+    <div class="tech-mono">
+      POWERED BY AI & NEXT-GEN WEB ARCHITECTURE // <a href="#hero">RETURN TO TOP ↑</a>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      'use strict';
+
+      // 1. SPOTLIGHT REVEAL & SCANNER TRACKING
+      var baseImg = document.getElementById('base-img');
+      var revealEl = document.getElementById('reveal-img');
+      var revealHud = document.getElementById('reveal-hud');
+      var scannerEl = document.getElementById('cursor-scanner');
+      var suitingFlash = document.getElementById('suiting-flash');
+      var suitingBtn = document.getElementById('btn-initiate-suiting');
+      var suitingBtnLabel = document.getElementById('suiting-btn-label');
+      var systemStatus = document.getElementById('system-status-code');
+      var hintEl = document.getElementById('reveal-hint');
+      var navbar = document.getElementById('navbar');
+
+      // Global Stark Lab blueprint grid
+      var globalGrid = document.getElementById('global-grid');
+      var currentGridOffset = 0;
+      var targetGridOffset = 0;
+      var currentScrollY = 0;
+
+      function updateScrollGrowth() {
+        currentScrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
+        targetGridOffset = (currentScrollY * 0.22) % 50;
+      }
+      window.addEventListener('scroll', updateScrollGrowth, { passive: true });
+      updateScrollGrowth();
+
+      // ==========================================
+      // DENSE HIGH-TECH PCB CIRCUIT BOARD BACKGROUND NETWORK
+      // Excludes Suit Up page (#hero) - Starts below Suit Up page
+      // Grows down dynamically as user scrolls down
+      // Features exact PCB connectors from reference image:
+      // - 4-Pin Inline IC Pads [■][■][■][■]
+      // - Parallel Pin Headers | | | |
+      // - 3-Dot Inline Headers [ • • • ]
+      // - Surface Mount SMD IC Footprints
+      // - Concentric Ring Vias & Dual Ring Test Nodes
+      // - 45-Degree Chamfered Traces & Glowing Data Pulses
+      // ==========================================
+      var circuitCanvas = document.getElementById('neural-roots-canvas');
+      var circuitCtx = circuitCanvas ? circuitCanvas.getContext('2d') : null;
+
+      var circuitTraces = [];
+      var circuitVias = [];
+      var circuitPulses = [];
+      var smoothGrowthFront = 0;
+      var lastPulseSpawnTime = 0;
+
+      function resizeCircuitCanvas() {
+        if (!circuitCanvas) return;
+        circuitCanvas.width = window.innerWidth;
+        circuitCanvas.height = window.innerHeight;
+        buildSenseCircuitBoard();
+      }
+
+      function addTrace(points, width, colorType, parentIndex, endViaType, startViaType, isVertical) {
+        if (!points || points.length < 2) return -1;
+        var traceIdx = circuitTraces.length;
+        var lengths = [0];
+        var totalLen = 0;
+        var minY = points[0].y;
+        var maxY = points[0].y;
+
+        for (var i = 1; i < points.length; i++) {
+          var dx = points[i].x - points[i - 1].x;
+          var dy = points[i].y - points[i - 1].y;
+          totalLen += Math.sqrt(dx * dx + dy * dy);
+          lengths.push(totalLen);
+          if (points[i].y < minY) minY = points[i].y;
+          if (points[i].y > maxY) maxY = points[i].y;
+          if (points[i - 1].y < minY) minY = points[i - 1].y;
+          if (points[i - 1].y > maxY) maxY = points[i - 1].y;
+        }
+
+        circuitTraces.push({
+          id: traceIdx,
+          points: points,
+          lengths: lengths,
+          totalLength: totalLen,
+          width: width || 1.6,
+          colorType: colorType || 'cyan',
+          startY: minY,
+          endY: maxY,
+          children: []
+        });
+
+        if (parentIndex !== undefined && parentIndex >= 0 && circuitTraces[parentIndex]) {
+          circuitTraces[parentIndex].children.push(traceIdx);
+        }
+
+        if (startViaType) {
+          addVia(points[0].x, points[0].y, startViaType, 3.5, colorType, isVertical);
+        }
+        if (endViaType) {
+          var lastPt = points[points.length - 1];
+          addVia(lastPt.x, lastPt.y, endViaType, 3.8, colorType, isVertical);
+        }
+
+        return traceIdx;
+      }
+
+      function addVia(x, y, type, radius, colorType, isVertical, count) {
+        circuitVias.push({
+          x: x,
+          y: y,
+          type: type || 'solid',
+          r: radius || 3.5,
+          color: (colorType === 'gold') ? 'gold' : 'cyan',
+          isVertical: isVertical !== undefined ? isVertical : true,
+          count: count || 4,
+          pulsePhase: Math.random() * Math.PI * 2
+        });
+      }
+
+      // Drawing Helper Functions for Reference Image Connectors
+      function drawConcentricRingVia(ctx, x, y, r, color, alpha) {
+        ctx.save();
+        var mainColor = color === 'gold' ? 'rgba(245, 179, 66, ' + alpha + ')' : 'rgba(0, 240, 255, ' + alpha + ')';
+        ctx.strokeStyle = mainColor;
+        ctx.shadowColor = color === 'gold' ? '#F5B342' : '#00F0FF';
+        ctx.shadowBlur = 7 * alpha;
+        ctx.lineWidth = 1.5;
+
+        // Outer Ring
+        ctx.beginPath();
+        ctx.arc(x, y, r, 0, Math.PI * 2);
+        ctx.stroke();
+
+        // Dark via hole gap
+        ctx.fillStyle = '#07090E';
+        ctx.beginPath();
+        ctx.arc(x, y, r * 0.55, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Inner glowing core dot
+        ctx.fillStyle = mainColor;
+        ctx.beginPath();
+        ctx.arc(x, y, r * 0.28, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.restore();
+      }
+
+      function drawPulsingVia(ctx, x, y, r, color, pulsePhase, now, alpha) {
+        ctx.save();
+        var mainColor = color === 'gold' ? 'rgba(245, 179, 66, ' + alpha + ')' : 'rgba(0, 240, 255, ' + alpha + ')';
+        var pVal = 1.0 + Math.sin(now * 0.0035 + pulsePhase) * 0.35;
+
+        // Outer expanding aura ring
+        ctx.strokeStyle = mainColor;
+        ctx.shadowColor = color === 'gold' ? '#F5B342' : '#00F0FF';
+        ctx.shadowBlur = 10 * alpha;
+        ctx.lineWidth = 1.3;
+        ctx.beginPath();
+        ctx.arc(x, y, (r + 4) * pVal, 0, Math.PI * 2);
+        ctx.stroke();
+
+        // Solid core
+        ctx.fillStyle = mainColor;
+        ctx.beginPath();
+        ctx.arc(x, y, r, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Bright white center spot
+        ctx.fillStyle = 'rgba(255, 255, 255, ' + (alpha * 0.9) + ')';
+        ctx.beginPath();
+        ctx.arc(x, y, r * 0.4, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.restore();
+      }
+
+      function drawSolidVia(ctx, x, y, r, color, alpha) {
+        ctx.save();
+        var mainColor = color === 'gold' ? 'rgba(245, 179, 66, ' + alpha + ')' : 'rgba(0, 240, 255, ' + alpha + ')';
+        ctx.fillStyle = mainColor;
+        ctx.shadowColor = color === 'gold' ? '#F5B342' : '#00F0FF';
+        ctx.shadowBlur = 6 * alpha;
+        ctx.beginPath();
+        ctx.arc(x, y, r, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      }
+
+      function drawICPad4(ctx, x, y, isVertical, color, alpha) {
+        ctx.save();
+        var mainColor = color === 'gold' ? 'rgba(245, 179, 66, ' + alpha + ')' : 'rgba(0, 240, 255, ' + alpha + ')';
+        var glowColor = color === 'gold' ? '#F5B342' : '#00F0FF';
+        ctx.fillStyle = mainColor;
+        ctx.shadowColor = glowColor;
+        ctx.shadowBlur = 8 * alpha;
+
+        var padSize = 4.5;
+        var gap = 4;
+        var totalSpan = (padSize + gap) * 3;
+        var startX = isVertical ? x - padSize / 2 : x - totalSpan / 2;
+        var startY = isVertical ? y - totalSpan / 2 : y - padSize / 2;
+
+        // Translucent IC outline box frame
+        ctx.strokeStyle = color === 'gold' ? 'rgba(245, 179, 66, ' + (alpha * 0.4) + ')' : 'rgba(0, 240, 255, ' + (alpha * 0.4) + ')';
+        ctx.lineWidth = 1;
+        if (isVertical) {
+          ctx.strokeRect(x - padSize - 2, startY - 3, padSize * 2 + 4, totalSpan + padSize + 6);
+        } else {
+          ctx.strokeRect(startX - 3, y - padSize - 2, totalSpan + padSize + 6, padSize * 2 + 4);
+        }
+
+        // Draw 4 inline metallic square pads
+        for (var i = 0; i < 4; i++) {
+          var px = isVertical ? startX : startX + i * (padSize + gap);
+          var py = isVertical ? startY + i * (padSize + gap) : startY;
+
+          ctx.fillStyle = mainColor;
+          ctx.fillRect(px, py, padSize, padSize);
+
+          // White crisp center dot
+          ctx.fillStyle = 'rgba(255, 255, 255, ' + (alpha * 0.9) + ')';
+          ctx.fillRect(px + 1.2, py + 1.2, padSize - 2.4, padSize - 2.4);
+        }
+        ctx.restore();
+      }
+
+      function drawPinHeader(ctx, x, y, count, isVertical, color, alpha) {
+        ctx.save();
+        var mainColor = color === 'gold' ? 'rgba(245, 179, 66, ' + alpha + ')' : 'rgba(0, 240, 255, ' + alpha + ')';
+        ctx.strokeStyle = mainColor;
+        ctx.fillStyle = mainColor;
+        ctx.shadowColor = color === 'gold' ? '#F5B342' : '#00F0FF';
+        ctx.shadowBlur = 6 * alpha;
+        ctx.lineWidth = 1.6;
+
+        var pinLen = 14;
+        var spacing = 5;
+        var numPins = count || 4;
+        var startOffset = -((numPins - 1) * spacing) / 2;
+
+        for (var i = 0; i < numPins; i++) {
+          var offset = startOffset + i * spacing;
+          ctx.beginPath();
+          if (isVertical) {
+            var px = x + offset;
+            ctx.moveTo(px, y - pinLen / 2);
+            ctx.lineTo(px, y + pinLen / 2);
+            ctx.stroke();
+            // Round solder caps
+            ctx.beginPath();
+            ctx.arc(px, y - pinLen / 2, 1.2, 0, Math.PI * 2);
+            ctx.arc(px, y + pinLen / 2, 1.2, 0, Math.PI * 2);
+            ctx.fill();
+          } else {
+            var py = y + offset;
+            ctx.moveTo(x - pinLen / 2, py);
+            ctx.lineTo(x + pinLen / 2, py);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.arc(x - pinLen / 2, py, 1.2, 0, Math.PI * 2);
+            ctx.arc(x + pinLen / 2, py, 1.2, 0, Math.PI * 2);
+            ctx.fill();
+          }
+        }
+        ctx.restore();
+      }
+
+      function drawHeader3(ctx, x, y, isVertical, color, alpha) {
+        ctx.save();
+        var mainColor = color === 'gold' ? 'rgba(245, 179, 66, ' + alpha + ')' : 'rgba(0, 240, 255, ' + alpha + ')';
+        ctx.strokeStyle = mainColor;
+        ctx.fillStyle = mainColor;
+        ctx.shadowColor = color === 'gold' ? '#F5B342' : '#00F0FF';
+        ctx.shadowBlur = 7 * alpha;
+
+        var spacing = 7;
+        var r = 2.2;
+        var totalSpan = spacing * 2;
+        var startX = isVertical ? x : x - spacing;
+        var startY = isVertical ? y - spacing : y;
+
+        // Subtitle header frame outline
+        ctx.lineWidth = 1;
+        ctx.strokeStyle = color === 'gold' ? 'rgba(245, 179, 66, ' + (alpha * 0.35) + ')' : 'rgba(0, 240, 255, ' + (alpha * 0.35) + ')';
+        if (isVertical) {
+          ctx.strokeRect(x - 5, y - spacing - 5, 10, totalSpan + 10);
+        } else {
+          ctx.strokeRect(x - spacing - 5, y - 5, totalSpan + 10, 10);
+        }
+
+        for (var i = 0; i < 3; i++) {
+          var px = isVertical ? startX : startX + i * spacing;
+          var py = isVertical ? startY + i * spacing : startY;
+
+          ctx.beginPath();
+          ctx.arc(px, py, r, 0, Math.PI * 2);
+          ctx.fillStyle = mainColor;
+          ctx.fill();
+
+          ctx.beginPath();
+          ctx.arc(px, py, r * 0.45, 0, Math.PI * 2);
+          ctx.fillStyle = '#07090E';
+          ctx.fill();
+        }
+        ctx.restore();
+      }
+
+      function drawICChipSMD(ctx, x, y, color, alpha) {
+        ctx.save();
+        var mainColor = color === 'gold' ? 'rgba(245, 179, 66, ' + alpha + ')' : 'rgba(0, 240, 255, ' + alpha + ')';
+        ctx.strokeStyle = mainColor;
+        ctx.fillStyle = mainColor;
+        ctx.shadowColor = color === 'gold' ? '#F5B342' : '#00F0FF';
+        ctx.shadowBlur = 8 * alpha;
+
+        var w = 18;
+        var h = 14;
+
+        // Chip body box
+        ctx.fillStyle = 'rgba(7, 13, 24, ' + (alpha * 0.9) + ')';
+        ctx.lineWidth = 1.2;
+        ctx.fillRect(x - w / 2, y - h / 2, w, h);
+        ctx.strokeRect(x - w / 2, y - h / 2, w, h);
+
+        // Pin 1 indicator dot
+        ctx.fillStyle = mainColor;
+        ctx.beginPath();
+        ctx.arc(x - w / 2 + 3, y - h / 2 + 3, 1.2, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Pins on left & right
+        var pinSpacing = 3.5;
+        for (var i = -1; i <= 1; i++) {
+          var py = y + i * pinSpacing;
+          ctx.fillRect(x - w / 2 - 3, py - 0.8, 3, 1.6);
+          ctx.fillRect(x + w / 2, py - 0.8, 3, 1.6);
+        }
+        ctx.restore();
+      }
+
+      function drawDualRing(ctx, x, y, color, alpha) {
+        ctx.save();
+        var mainColor = color === 'gold' ? 'rgba(245, 179, 66, ' + alpha + ')' : 'rgba(0, 240, 255, ' + alpha + ')';
+        ctx.strokeStyle = mainColor;
+        ctx.fillStyle = mainColor;
+        ctx.shadowColor = color === 'gold' ? '#F5B342' : '#00F0FF';
+        ctx.shadowBlur = 8 * alpha;
+        ctx.lineWidth = 1.3;
+
+        var r = 3.8;
+        var dist = 10;
+
+        ctx.beginPath();
+        ctx.moveTo(x - dist / 2, y);
+        ctx.lineTo(x + dist / 2, y);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(x - dist / 2, y, r, 0, Math.PI * 2);
+        ctx.stroke();
+        ctx.fillStyle = '#07090E';
+        ctx.fill();
+        ctx.fillStyle = mainColor;
+        ctx.beginPath();
+        ctx.arc(x - dist / 2, y, r * 0.35, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(x + dist / 2, y, r, 0, Math.PI * 2);
+        ctx.stroke();
+        ctx.fillStyle = '#07090E';
+        ctx.fill();
+        ctx.fillStyle = mainColor;
+        ctx.beginPath();
+        ctx.arc(x + dist / 2, y, r * 0.35, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.restore();
+      }
+
+      function buildSenseCircuitBoard() {
+        circuitTraces = [];
+        circuitVias = [];
+        circuitPulses = [];
+
+        var W = window.innerWidth;
+        var scrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
+
+        var heroEl = document.getElementById('hero');
+        var heroHeight = heroEl ? heroEl.offsetHeight : window.innerHeight;
+
+        var secAbout = document.getElementById('about');
+        var secSkills = document.getElementById('skills');
+        var secProjects = document.getElementById('projects');
+        var secEducation = document.getElementById('education');
+        var secCertifications = document.getElementById('certifications');
+        var secContact = document.getElementById('contact');
+
+        var aboutCard = document.querySelector('.about-card');
+        var aboutStats = document.querySelector('.about-stats');
+        var skillCards = document.querySelectorAll('.skill-card');
+        var projectCards = document.querySelectorAll('.project-card');
+        var eduCard1 = document.getElementById('edu-card-1');
+        var eduCard2 = document.getElementById('edu-card-2');
+        var certDeck = document.getElementById('window-deck-wrapper');
+        var connectCard = document.querySelector('.connect-card');
+
+        // ==========================================
+        // 1. CONNECTION LINES ORIGINATE FROM THE SUIT UP PAGE CENTER OF THE CIRCLE
+        // ==========================================
+        var originX = W * 0.5;
+        var originY = window.innerHeight * 0.50; // Exact center of the hero circle in middle of Suit Up page
+
+        // Master Central Reactor Core Vias at center of circle
+        addVia(originX, originY, 'pulse', 6.5, 'cyan');
+        addVia(originX - 35, originY, 'ring', 3.5, 'gold');
+        addVia(originX + 35, originY, 'ring', 3.5, 'cyan');
+        addVia(originX - 18, originY + 35, 'solid', 2.8, 'cyan');
+        addVia(originX + 18, originY + 35, 'solid', 2.8, 'gold');
+
+        // X channel columns across the background width
+        var cLeftOut   = Math.max(20, W * 0.04);
+        var cLeftMid   = Math.max(50, W * 0.12);
+        var cMidLeft   = W * 0.25;
+        var cCenter    = W * 0.50;
+        var cMidRight  = W * 0.75;
+        var cRightMid  = Math.min(W - 50, W * 0.88);
+        var cRightOut  = Math.min(W - 20, W * 0.96);
+
+        var yAboutTop = secAbout ? (secAbout.getBoundingClientRect().top + scrollY) : originY + 600;
+
+        // Trunks emerging directly from Suit Up circle center (originX, originY)
+        var tLeft = addTrace([
+          { x: originX - 20, y: originY + 15 },
+          { x: originX - 20, y: originY + 140 },
+          { x: originX - 90, y: originY + 230 },
+          { x: cLeftOut + 40, y: originY + 340 },
+          { x: cLeftOut + 40, y: yAboutTop - 40 },
+          { x: cLeftOut, y: yAboutTop + 20 },
+          { x: cLeftMid, y: yAboutTop + 350 }
+        ], 1.8, 'cyan', -1, 'ic-pad-4', 'pulse', true);
+
+        // CONTINUOUS CENTRAL SPINAL BUS (CENTER LANE) FROM SUIT UP CIRCLE CENTER ALL THE WAY TO THE END
+        var tSpineAbout = addTrace([
+          { x: originX, y: originY + 15 },
+          { x: cCenter, y: originY + 200 },
+          { x: cCenter, y: yAboutTop + 450 }
+        ], 1.8, 'cyan', -1, 'header-3', 'solid', true);
+
+        var tRight = addTrace([
+          { x: originX + 20, y: originY + 15 },
+          { x: originX + 20, y: originY + 140 },
+          { x: originX + 90, y: originY + 230 },
+          { x: cRightOut - 40, y: originY + 340 },
+          { x: cRightOut - 40, y: yAboutTop - 40 },
+          { x: cRightOut, y: yAboutTop + 20 },
+          { x: cRightMid, y: yAboutTop + 350 }
+        ], 1.8, 'gold', -1, 'ic-pad-4', 'pulse', true);
+
+        // ==========================================
+        // 2. CONNECT TO ABOUT SECTION (ALL CONNECTORS PHYSICALLY WIRED)
+        // ==========================================
+        if (aboutCard) {
+          var abRect = aboutCard.getBoundingClientRect();
+          var abPortY = abRect.top + scrollY + 40;
+          addTrace([
+            { x: cLeftMid, y: abPortY - 20 },
+            { x: cLeftMid + 20, y: abPortY },
+            { x: abRect.left, y: abPortY }
+          ], 1.4, 'cyan', tLeft, 'ic-pad-4', 'ring', false);
+        }
+
+        if (aboutStats) {
+          var stRect = aboutStats.getBoundingClientRect();
+          var stPortY = stRect.top + scrollY + 40;
+          addTrace([
+            { x: cRightMid, y: stPortY - 20 },
+            { x: cRightMid - 20, y: stPortY },
+            { x: stRect.right, y: stPortY }
+          ], 1.4, 'gold', tRight, 'ic-pad-4', 'ring', false);
+        }
+
+        // Connectors on About background attached directly to trace nodes
+        addVia(cLeftOut, yAboutTop + 80, 'pin-header', 0, 'cyan', true, 4);
+        addVia(cRightOut, yAboutTop + 120, 'pin-header', 0, 'gold', true, 4);
+        addVia(cCenter, yAboutTop + 160, 'ic-chip-smd', 0, 'cyan');
+        addVia(cLeftMid, yAboutTop + 240, 'dual-ring', 0, 'cyan');
+
+        // ==========================================
+        // 3. SKILLS SECTION NETWORK
+        // ==========================================
+        var ySkillsTop = secSkills ? (secSkills.getBoundingClientRect().top + scrollY) : yAboutTop + 750;
+
+        var tSpineSkills = addTrace([
+          { x: cCenter, y: yAboutTop + 450 },
+          { x: cCenter, y: ySkillsTop + 550 }
+        ], 1.8, 'cyan', tSpineAbout, 'ic-chip-smd', 'ring', true);
+
+        var tSkillsCross = addTrace([
+          { x: cLeftMid, y: yAboutTop + 350 },
+          { x: cLeftMid, y: ySkillsTop - 120 },
+          { x: cMidLeft, y: ySkillsTop - 70 },
+          { x: cMidRight, y: ySkillsTop - 70 },
+          { x: cRightMid, y: ySkillsTop - 120 },
+          { x: cRightMid, y: ySkillsTop + 450 }
+        ], 1.6, 'gold', tRight, 'ic-chip-smd', 'pin-header', false);
+
+        var tSkillsLeft = addTrace([
+          { x: cLeftMid, y: ySkillsTop - 120 },
+          { x: cLeftOut, y: ySkillsTop - 70 },
+          { x: cLeftOut, y: ySkillsTop + 450 }
+        ], 1.7, 'cyan', tLeft, 'pulse', 'ring', true);
+
+        if (skillCards && skillCards.length > 0) {
+          for (var sk = 0; sk < skillCards.length; sk++) {
+            var sc = skillCards[sk];
+            var scRect = sc.getBoundingClientRect();
+            var scMidY = sc.top + scrollY + scRect.height * 0.45;
+            var scLeft = scRect.left;
+            var scRight = scRect.right;
+
+            if (sk % 2 === 0) {
+              addTrace([
+                { x: cLeftOut, y: scMidY - 20 },
+                { x: cLeftOut + 20, y: scMidY },
+                { x: scLeft, y: scMidY }
+              ], 1.3, 'cyan', tSkillsLeft, 'header-3', 'ic-pad-4', false);
+            } else {
+              addTrace([
+                { x: cRightMid, y: scMidY - 20 },
+                { x: cRightMid - 20, y: scMidY },
+                { x: scRight, y: scMidY }
+              ], 1.3, 'gold', tSkillsCross, 'header-3', 'ic-pad-4', false);
+            }
+          }
+        }
+
+        addVia(cMidLeft, ySkillsTop - 70, 'ic-pad-4', 0, 'cyan', false);
+        addVia(cMidRight, ySkillsTop - 70, 'ic-pad-4', 0, 'gold', false);
+        addVia(cLeftOut, ySkillsTop + 200, 'dual-ring', 0, 'cyan');
+        addVia(cRightMid, ySkillsTop + 260, 'pin-header', 0, 'gold', true, 4);
+
+        // ==========================================
+        // 4. PROJECTS SECTION NETWORK (CENTER LANE CONNECTED ALL THE WAY THROUGH FEATURED PROJECTS)
+        // ==========================================
+        var yProjTop = secProjects ? (secProjects.getBoundingClientRect().top + scrollY) : ySkillsTop + 900;
+        var yProjEnd = secProjects ? (secProjects.getBoundingClientRect().top + scrollY + secProjects.offsetHeight) : yProjTop + 1400;
+
+        var tProjLeft = addTrace([
+          { x: cLeftOut, y: ySkillsTop + 450 },
+          { x: cLeftOut, y: yProjTop - 80 },
+          { x: cLeftMid, y: yProjTop - 30 },
+          { x: cLeftMid, y: yProjTop + 600 }
+        ], 1.7, 'cyan', tSkillsLeft, 'pin-header', 'pulse', true);
+
+        var tProjRight = addTrace([
+          { x: cRightMid, y: ySkillsTop + 450 },
+          { x: cRightOut, y: yProjTop - 80 },
+          { x: cRightOut, y: yProjTop + 600 }
+        ], 1.7, 'gold', tSkillsCross, 'ic-chip-smd', 'pulse', true);
+
+        // UNBROKEN FEATURED PROJECTS CENTER LANE
+        var tSpineProjects = addTrace([
+          { x: cCenter, y: ySkillsTop + 550 },
+          { x: cCenter, y: yProjTop - 40 },
+          { x: cCenter, y: yProjTop + 350 },
+          { x: cCenter, y: yProjTop + 750 },
+          { x: cCenter, y: yProjEnd }
+        ], 1.8, 'cyan', tSpineSkills, 'pulse', 'ic-chip-smd', true);
+
+        if (projectCards && projectCards.length > 0) {
+          for (var pj = 0; pj < projectCards.length; pj++) {
+            var pc = projectCards[pj];
+            var pcRect = pc.getBoundingClientRect();
+            var pcPortY = pc.top + scrollY + 40;
+            var pcLeft = pcRect.left;
+            var pcRight = pcRect.right;
+
+            if (pj % 2 === 0) {
+              addTrace([
+                { x: cLeftMid, y: pcPortY - 20 },
+                { x: cLeftMid + 18, y: pcPortY },
+                { x: pcLeft, y: pcPortY }
+              ], 1.4, 'cyan', tProjLeft, 'ic-pad-4', 'ring', false);
+            } else {
+              addTrace([
+                { x: cRightOut, y: pcPortY - 20 },
+                { x: cRightOut - 18, y: pcPortY },
+                { x: pcRight, y: pcPortY }
+              ], 1.4, 'gold', tProjRight, 'ic-pad-4', 'ring', false);
+            }
+          }
+        }
+
+        addVia(cLeftMid, yProjTop - 30, 'header-3', 0, 'cyan', true);
+        addVia(cRightOut, yProjTop - 80, 'pin-header', 0, 'gold', true, 4);
+        addVia(cCenter, yProjTop + 350, 'dual-ring', 0, 'cyan');
+        addVia(cCenter, yProjTop + 750, 'ic-pad-4', 0, 'gold', false);
+        addVia(cLeftMid, yProjTop + 420, 'ic-chip-smd', 0, 'gold');
+
+        // ==========================================
+        // 5. EDUCATION SECTION NETWORK
+        // ==========================================
+        var yEduTop = secEducation ? (secEducation.getBoundingClientRect().top + scrollY) : yProjEnd + 120;
+
+        var tSpineEducation = addTrace([
+          { x: cCenter, y: yProjEnd },
+          { x: cCenter, y: yEduTop + 450 }
+        ], 1.8, 'cyan', tSpineProjects, 'ic-pad-4', 'pulse', true);
+
+        var tEduLeft = addTrace([
+          { x: cLeftMid, y: yProjTop + 600 },
+          { x: cLeftOut, y: yEduTop - 60 },
+          { x: cLeftOut, y: yEduTop + 350 }
+        ], 1.7, 'cyan', tProjLeft, 'ic-pad-4', 'pin-header', true);
+
+        var tEduRight = addTrace([
+          { x: cRightOut, y: yProjTop + 600 },
+          { x: cRightMid, y: yEduTop - 60 },
+          { x: cRightMid, y: yEduTop + 350 }
+        ], 1.7, 'gold', tProjRight, 'ic-pad-4', 'pin-header', true);
+
+        if (eduCard1) {
+          var e1Rect = eduCard1.getBoundingClientRect();
+          var e1PortY = e1Rect.top + scrollY + 40;
+          addTrace([
+            { x: cLeftOut, y: e1PortY - 20 },
+            { x: cLeftOut + 20, y: e1PortY },
+            { x: e1Rect.left, y: e1PortY }
+          ], 1.4, 'cyan', tEduLeft, 'ring', 'ic-pad-4', false);
+        }
+        if (eduCard2) {
+          var e2Rect = eduCard2.getBoundingClientRect();
+          var e2PortY = e2Rect.top + scrollY + 40;
+          addTrace([
+            { x: cRightMid, y: e2PortY - 20 },
+            { x: cRightMid - 20, y: e2PortY },
+            { x: e2Rect.right, y: e2PortY }
+          ], 1.4, 'gold', tEduRight, 'ring', 'ic-pad-4', false);
+        }
+
+        addVia(cCenter, yEduTop + 60, 'ic-chip-smd', 0, 'cyan');
+        addVia(cLeftOut, yEduTop + 180, 'dual-ring', 0, 'gold');
+        addVia(cRightMid, yEduTop + 220, 'header-3', 0, 'cyan', true);
+
+        // ==========================================
+        // 6. CERTIFICATIONS SECTION NETWORK
+        // ==========================================
+        var yCertTop = secCertifications ? (secCertifications.getBoundingClientRect().top + scrollY) : yEduTop + 600;
+
+        var tSpineCertifications = addTrace([
+          { x: cCenter, y: yEduTop + 450 },
+          { x: cCenter, y: yCertTop + 550 }
+        ], 1.8, 'cyan', tSpineEducation, 'ring', 'ic-pad-4', true);
+
+        var tCertLeft = addTrace([
+          { x: cLeftOut, y: yEduTop + 350 },
+          { x: cLeftMid, y: yCertTop - 50 },
+          { x: cLeftMid, y: yCertTop + 400 }
+        ], 1.7, 'cyan', tEduLeft, 'pulse', 'ring', true);
+
+        var tCertRight = addTrace([
+          { x: cRightMid, y: yEduTop + 350 },
+          { x: cRightOut, y: yCertTop - 50 },
+          { x: cRightOut, y: yCertTop + 400 }
+        ], 1.7, 'gold', tEduRight, 'pulse', 'ring', true);
+
+        if (certDeck) {
+          var cdRect = certDeck.getBoundingClientRect();
+          var cdPortY = cdRect.top + scrollY + 35;
+          addTrace([
+            { x: cLeftMid, y: cdPortY - 20 },
+            { x: cLeftMid + 25, y: cdPortY },
+            { x: cdRect.left, y: cdPortY }
+          ], 1.4, 'cyan', tCertLeft, 'ic-pad-4', 'solid', false);
+
+          addTrace([
+            { x: cRightOut, y: cdPortY - 20 },
+            { x: cRightOut - 25, y: cdPortY },
+            { x: cdRect.right, y: cdPortY }
+          ], 1.4, 'gold', tCertRight, 'ic-pad-4', 'solid', false);
+        }
+
+        addVia(cCenter, yCertTop + 100, 'pin-header', 0, 'cyan', true, 4);
+        addVia(cLeftMid, yCertTop + 260, 'ic-chip-smd', 0, 'cyan');
+        addVia(cRightOut, yCertTop + 300, 'dual-ring', 0, 'gold');
+
+        // ==========================================
+        // 7. CONTACT SECTION NETWORK (TERMINATING AT BOTTOM)
+        // ==========================================
+        var yContactTop = secContact ? (secContact.getBoundingClientRect().top + scrollY) : yCertTop + 600;
+
+        var tContactLeft = addTrace([
+          { x: cLeftMid, y: yCertTop + 400 },
+          { x: cLeftOut, y: yContactTop - 40 },
+          { x: cLeftOut, y: yContactTop + 300 }
+        ], 1.8, 'cyan', tCertLeft, 'ic-pad-4', 'pulse', true);
+
+        var tContactRight = addTrace([
+          { x: cRightOut, y: yCertTop + 400 },
+          { x: cRightMid, y: yContactTop - 40 },
+          { x: cRightMid, y: yContactTop + 300 }
+        ], 1.8, 'gold', tCertRight, 'ic-pad-4', 'pulse', true);
+
+        if (connectCard) {
+          var ctRect = connectCard.getBoundingClientRect();
+          var ctPortY = ctRect.top + scrollY + 40;
+          addTrace([
+            { x: cLeftOut, y: ctPortY - 20 },
+            { x: cLeftOut + 20, y: ctPortY },
+            { x: ctRect.left, y: ctPortY }
+          ], 1.5, 'cyan', tContactLeft, 'ring', 'ic-pad-4', false);
+
+          addTrace([
+            { x: cRightMid, y: ctPortY - 20 },
+            { x: cRightMid - 20, y: ctPortY },
+            { x: ctRect.right, y: ctPortY }
+          ], 1.5, 'gold', tContactRight, 'ring', 'ic-pad-4', false);
+
+          var ctBottom = ctRect.bottom + scrollY + 40;
+
+          // CONTINUOUS SPINAL TERMINATION
+          var tSpineContact = addTrace([
+            { x: cCenter, y: yCertTop + 550 },
+            { x: cCenter, y: yContactTop + 400 },
+            { x: cCenter, y: ctBottom + 120 }
+          ], 1.8, 'cyan', tSpineCertifications, 'pulse', 'ring', true);
+
+          addTrace([
+            { x: ctRect.left + 40, y: ctBottom },
+            { x: cCenter, y: ctBottom + 60 },
+            { x: cCenter, y: ctBottom + 120 }
+          ], 1.8, 'cyan', tContactLeft, 'pulse', 'ring', false);
+
+          addTrace([
+            { x: ctRect.right - 40, y: ctBottom },
+            { x: cCenter, y: ctBottom + 60 }
+          ], 1.8, 'gold', tContactRight, 'pulse', 'ring', false);
+
+          addVia(cCenter, ctBottom + 120, 'pulse', 6.5, 'cyan');
+          addVia(cCenter - 40, ctBottom + 120, 'ic-pad-4', 0, 'gold', false);
+          addVia(cCenter + 40, ctBottom + 120, 'ic-pad-4', 0, 'cyan', false);
+        }
+
+        // ==========================================
+        // AUTO-INTERCONNECT GRAPH FOR SEAMLESS MOVING BALLS
+        // Links every trace to its physically connected neighbor branches
+        // ==========================================
+        for (var i = 0; i < circuitTraces.length; i++) {
+          var tr1 = circuitTraces[i];
+          var last1 = tr1.points[tr1.points.length - 1];
+          for (var j = 0; j < circuitTraces.length; j++) {
+            if (i === j) continue;
+            var tr2 = circuitTraces[j];
+            var first2 = tr2.points[0];
+            var dx = last1.x - first2.x;
+            var dy = last1.y - first2.y;
+            if (Math.sqrt(dx * dx + dy * dy) < 30) {
+              if (tr1.children.indexOf(j) === -1) {
+                tr1.children.push(j);
+              }
+            }
+          }
+        }
+      }
+
+      // Interactive Click Shockwaves
+      var clickShockwaves = [];
+
+      function createClickShockwave(clientX, clientY) {
+        var numSparks = 14;
+        var sparks = [];
+        for (var i = 0; i < numSparks; i++) {
+          var angle = (Math.PI * 2 / numSparks) * i + (Math.random() - 0.5) * 0.35;
+          var speed = 80 + Math.random() * 130;
+          sparks.push({
+            vx: Math.cos(angle) * speed,
+            vy: Math.sin(angle) * speed,
+            size: 2.2 + Math.random() * 2.2,
+            color: Math.random() > 0.35 ? '#00F0FF' : '#F5B342'
+          });
+        }
+
+        clickShockwaves.push({
+          x: clientX,
+          y: clientY,
+          birth: performance.now(),
+          duration: 750,
+          sparks: sparks
+        });
+      }
+
+      window.addEventListener('click', function(e) {
+        createClickShockwave(e.clientX, e.clientY);
+      });
+
+      function drawCircuitBoard(scrollY, now) {
+        if (!circuitCtx) return;
+        var ctx = circuitCtx;
+        var W = circuitCanvas.width;
+        var H = circuitCanvas.height;
+
+        ctx.clearRect(0, 0, W, H);
+
+        var heroEl = document.getElementById('hero');
+        var heroHeight = heroEl ? heroEl.offsetHeight : H;
+
+        var targetGrowthFront = scrollY + H + 300;
+        smoothGrowthFront += (targetGrowthFront - smoothGrowthFront) * 0.12;
+
+        // 1. DRAW BRIGHT LUMINESCENT PCB TRACES
+        for (var b = 0; b < circuitTraces.length; b++) {
+          var trace = circuitTraces[b];
+          var pts = trace.points;
+          if (pts.length < 2) continue;
+
+          if (trace.startY > smoothGrowthFront) continue;
+
+          var minScreenY = trace.startY - scrollY;
+          var maxScreenY = trace.endY - scrollY;
+          if (maxScreenY < -150 || minScreenY > H + 150) continue;
+
+          var grownFraction = 1.0;
+          if (trace.endY > smoothGrowthFront) {
+            grownFraction = Math.max(0, Math.min(1, (smoothGrowthFront - trace.startY) / Math.max(trace.endY - trace.startY, 1)));
+          }
+          if (grownFraction <= 0.005) continue;
+
+          var maxDrawnIndex = Math.floor(grownFraction * (pts.length - 1));
+          var remainder = (grownFraction * (pts.length - 1)) - maxDrawnIndex;
+
+          ctx.save();
+          if (trace.colorType === 'gold') {
+            ctx.strokeStyle = 'rgba(245, 179, 66, 0.48)';
+            ctx.shadowColor = 'rgba(245, 179, 66, 0.65)';
+            ctx.shadowBlur = 6;
+          } else {
+            ctx.strokeStyle = 'rgba(0, 240, 255, 0.54)';
+            ctx.shadowColor = 'rgba(0, 240, 255, 0.70)';
+            ctx.shadowBlur = 7;
+          }
+          ctx.lineWidth = trace.width || 1.6;
+          ctx.lineCap = 'round';
+          ctx.lineJoin = 'miter';
+
+          ctx.beginPath();
+          ctx.moveTo(pts[0].x, pts[0].y - scrollY);
+
+          for (var i = 1; i <= maxDrawnIndex; i++) {
+            ctx.lineTo(pts[i].x, pts[i].y - scrollY);
+          }
+
+          if (remainder > 0 && maxDrawnIndex < pts.length - 1) {
+            var curP = pts[maxDrawnIndex];
+            var nextP = pts[maxDrawnIndex + 1];
+            var interpX = curP.x + (nextP.x - curP.x) * remainder;
+            var interpY = curP.y + (nextP.y - curP.y) * remainder;
+            ctx.lineTo(interpX, interpY - scrollY);
+          }
+
+          ctx.stroke();
+          ctx.restore();
+        }
+
+        // 2. DRAW ALL CONNECTED CONNECTORS & VIAS
+        for (var n = 0; n < circuitVias.length; n++) {
+          var via = circuitVias[n];
+          if (via.y > smoothGrowthFront) continue;
+
+          var viaScreenY = via.y - scrollY;
+          if (viaScreenY < -50 || viaScreenY > H + 50) continue;
+
+          var alpha = Math.min(1, Math.max(0, (smoothGrowthFront - via.y + 50) / 50));
+
+          switch (via.type) {
+            case 'ring':
+              drawConcentricRingVia(ctx, via.x, viaScreenY, via.r, via.color, alpha);
+              break;
+            case 'pulse':
+              drawPulsingVia(ctx, via.x, viaScreenY, via.r, via.color, via.pulsePhase, now, alpha);
+              break;
+            case 'solid':
+              drawSolidVia(ctx, via.x, viaScreenY, via.r, via.color, alpha);
+              break;
+            case 'ic-pad-4':
+              drawICPad4(ctx, via.x, viaScreenY, via.isVertical, via.color, alpha);
+              break;
+            case 'pin-header':
+              drawPinHeader(ctx, via.x, viaScreenY, via.count || 4, via.isVertical, via.color, alpha);
+              break;
+            case 'header-3':
+              drawHeader3(ctx, via.x, viaScreenY, via.isVertical, via.color, alpha);
+              break;
+            case 'ic-chip-smd':
+              drawICChipSMD(ctx, via.x, viaScreenY, via.color, alpha);
+              break;
+            case 'dual-ring':
+              drawDualRing(ctx, via.x, viaScreenY, via.color, alpha);
+              break;
+          }
+        }
+
+        // 3. MOVING DATA PACKET BALLS FLOWING BETWEEN ALL CONNECTED LINES
+        if (now - lastPulseSpawnTime > 200) {
+          lastPulseSpawnTime = now;
+          var activeIndices = [];
+          for (var idx = 0; idx < circuitTraces.length; idx++) {
+            if (circuitTraces[idx].startY <= smoothGrowthFront) {
+              activeIndices.push(idx);
+            }
+          }
+          if (activeIndices.length > 0) {
+            var cand = activeIndices[Math.floor(Math.random() * activeIndices.length)];
+            var isCyan = Math.random() > 0.35;
+            circuitPulses.push({
+              traceIndex: cand,
+              dist: 0,
+              speed: 220 + Math.random() * 160,
+              color: isCyan ? 'rgba(0, 240, 255, 0.95)' : 'rgba(255, 215, 110, 0.95)',
+              glowColor: isCyan ? '#00F0FF' : '#FFE28A',
+              size: 3.2,
+              trail: []
+            });
+          }
+        }
+
+        var dt = 0.016;
+        for (var p = circuitPulses.length - 1; p >= 0; p--) {
+          var pulse = circuitPulses[p];
+          var tr = circuitTraces[pulse.traceIndex];
+          if (!tr) {
+            circuitPulses.splice(p, 1);
+            continue;
+          }
+
+          pulse.dist += pulse.speed * dt;
+
+          if (pulse.dist >= tr.totalLength) {
+            if (tr.children && tr.children.length > 0) {
+              pulse.traceIndex = tr.children[Math.floor(Math.random() * tr.children.length)];
+              pulse.dist = 0;
+              pulse.trail = [];
+            } else {
+              // Re-route to a random active trace to keep data balls flowing continuously across all lines
+              var activeTraces = [];
+              for (var a = 0; a < circuitTraces.length; a++) {
+                if (circuitTraces[a].startY <= smoothGrowthFront) activeTraces.push(a);
+              }
+              if (activeTraces.length > 0) {
+                pulse.traceIndex = activeTraces[Math.floor(Math.random() * activeTraces.length)];
+                pulse.dist = 0;
+                pulse.trail = [];
+              } else {
+                circuitPulses.splice(p, 1);
+                continue;
+              }
+            }
+          }
+
+          var bPts = tr.points;
+          var bLens = tr.lengths;
+          var curX = bPts[0].x;
+          var curY = bPts[0].y;
+
+          for (var k = 1; k < bLens.length; k++) {
+            if (pulse.dist <= bLens[k]) {
+              var segStartLen = bLens[k - 1];
+              var segEndLen = bLens[k];
+              var segFrac = (pulse.dist - segStartLen) / Math.max(segEndLen - segStartLen, 0.001);
+              curX = bPts[k - 1].x + (bPts[k].x - bPts[k - 1].x) * segFrac;
+              curY = bPts[k - 1].y + (bPts[k].y - bPts[k - 1].y) * segFrac;
+              break;
+            }
+          }
+
+          if (curY > smoothGrowthFront) {
+            circuitPulses.splice(p, 1);
+            continue;
+          }
+
+          if (!pulse.trail) pulse.trail = [];
+          pulse.trail.unshift({ x: curX, y: curY });
+          if (pulse.trail.length > 7) pulse.trail.pop();
+
+          var pulseScreenY = curY - scrollY;
+          if (pulseScreenY >= -20 && pulseScreenY <= H + 20) {
+            ctx.save();
+
+            for (var t = 1; t < pulse.trail.length; t++) {
+              var trPt = pulse.trail[t];
+              var trY = trPt.y - scrollY;
+              var trAlpha = (1 - (t / pulse.trail.length)) * 0.55;
+              ctx.fillStyle = pulse.color.replace('0.95', trAlpha.toFixed(2));
+              ctx.beginPath();
+              ctx.arc(trPt.x, trY, pulse.size * (1 - t * 0.1), 0, Math.PI * 2);
+              ctx.fill();
+            }
+
+            ctx.fillStyle = '#FFFFFF';
+            ctx.shadowColor = pulse.glowColor;
+            ctx.shadowBlur = 12;
+            ctx.beginPath();
+            ctx.arc(curX, pulseScreenY, pulse.size, 0, Math.PI * 2);
+            ctx.fill();
+
+            ctx.fillStyle = pulse.color;
+            ctx.beginPath();
+            ctx.arc(curX, pulseScreenY, pulse.size * 1.6, 0, Math.PI * 2);
+            ctx.fill();
+
+            ctx.restore();
+          }
+        }
+
+        // 4. INTERACTIVE CLICK SHOCKWAVES
+        for (var w = clickShockwaves.length - 1; w >= 0; w--) {
+          var sw = clickShockwaves[w];
+          var age = now - sw.birth;
+          if (age > sw.duration) {
+            clickShockwaves.splice(w, 1);
+            continue;
+          }
+
+          var progress = age / sw.duration;
+          var fade = 1 - progress;
+          var curRadius = 15 + progress * 130;
+
+          ctx.save();
+          ctx.strokeStyle = 'rgba(0, 240, 255, ' + (fade * 0.8) + ')';
+          ctx.shadowColor = '#00F0FF';
+          ctx.shadowBlur = 12 * fade;
+          ctx.lineWidth = Math.max(1, 3.5 * fade);
+          ctx.beginPath();
+          ctx.arc(sw.x, sw.y, curRadius, 0, Math.PI * 2);
+          ctx.stroke();
+
+          var innerRadius = Math.max(0, curRadius * 0.55);
+          ctx.strokeStyle = 'rgba(245, 179, 66, ' + (fade * 0.6) + ')';
+          ctx.shadowColor = '#F5B342';
+          ctx.lineWidth = Math.max(1, 2 * fade);
+          ctx.beginPath();
+          ctx.arc(sw.x, sw.y, innerRadius, 0, Math.PI * 2);
+          ctx.stroke();
+
+          if (progress < 0.35) {
+            var coreFade = 1 - (progress / 0.35);
+            var radGrad = ctx.createRadialGradient(sw.x, sw.y, 0, sw.x, sw.y, 30 * coreFade);
+            radGrad.addColorStop(0, 'rgba(255, 255, 255, ' + (coreFade * 0.9) + ')');
+            radGrad.addColorStop(0.4, 'rgba(0, 240, 255, ' + (coreFade * 0.6) + ')');
+            radGrad.addColorStop(1, 'rgba(0, 240, 255, 0)');
+            ctx.fillStyle = radGrad;
+            ctx.beginPath();
+            ctx.arc(sw.x, sw.y, 30 * coreFade, 0, Math.PI * 2);
+            ctx.fill();
+          }
+
+          for (var sp = 0; sp < sw.sparks.length; sp++) {
+            var spark = sw.sparks[sp];
+            var spX = sw.x + spark.vx * (age / 1000);
+            var spY = sw.y + spark.vy * (age / 1000);
+
+            ctx.fillStyle = spark.color;
+            ctx.shadowColor = spark.color;
+            ctx.shadowBlur = 8;
+            ctx.beginPath();
+            ctx.arc(spX, spY, spark.size * fade, 0, Math.PI * 2);
+            ctx.fill();
+          }
+
+          ctx.restore();
+        }
+      }
+
+      function drawNeuralRoots(scrollY, now) {
+        drawCircuitBoard(scrollY, now);
+      }
+
+      window.addEventListener('resize', resizeCircuitCanvas);
+      window.addEventListener('load', resizeCircuitCanvas);
+      resizeCircuitCanvas();
+      setTimeout(resizeCircuitCanvas, 600);
+
+      // ==========================================
+      // STACKED WINDOW TAB DECK CONTROLLER (CERTIFICATIONS)
+      // Displays certification cards one-by-one with 3D cascading depth
+      // Wheel scroll flips between tabs
+      // ==========================================
+      var windowCards = document.querySelectorAll('.stack-window-card');
+      var filterPills = document.querySelectorAll('.deck-pill');
+      var counterEl = document.getElementById('deck-counter');
+      var prevBtn = document.getElementById('deck-prev-btn');
+      var nextBtn = document.getElementById('deck-next-btn');
+      var stepperDotsContainer = document.getElementById('deck-stepper-dots');
+
+      var currentTabIndex = 0;
+      var activeFilter = 'all';
+      var filteredCards = [];
+      var isWheelThrottled = false;
+
+      function updateFilteredCards() {
+        filteredCards = [];
+        windowCards.forEach(function(card) {
+          var cat = card.getAttribute('data-category') || 'all';
+          if (activeFilter === 'all' || cat === activeFilter) {
+            filteredCards.push(card);
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+        if (currentTabIndex >= filteredCards.length) {
+          currentTabIndex = Math.max(0, filteredCards.length - 1);
+        }
+        renderWindowDeck();
+        renderStepperDots();
+      }
+
+      function renderStepperDots() {
+        if (!stepperDotsContainer) return;
+        stepperDotsContainer.innerHTML = '';
+        filteredCards.forEach(function(_, idx) {
+          var dot = document.createElement('div');
+          dot.className = 'stepper-dot' + (idx === currentTabIndex ? ' active' : '');
+          dot.setAttribute('aria-label', 'Go to tab ' + (idx + 1));
+          dot.addEventListener('click', function() {
+            goToTab(idx);
+          });
+          stepperDotsContainer.appendChild(dot);
+        });
+      }
+
+      function renderWindowDeck() {
+        if (counterEl && filteredCards.length > 0) {
+          var curStr = (currentTabIndex + 1 < 10 ? '0' : '') + (currentTabIndex + 1);
+          var totStr = (filteredCards.length < 10 ? '0' : '') + filteredCards.length;
+          counterEl.textContent = curStr + ' / ' + totStr;
+        }
+
+        filteredCards.forEach(function(card, idx) {
+          if (idx === currentTabIndex) {
+            card.setAttribute('data-depth', '0');
+          } else if (idx === currentTabIndex + 1) {
+            card.setAttribute('data-depth', '1');
+          } else if (idx === currentTabIndex + 2) {
+            card.setAttribute('data-depth', '2');
+          } else if (idx > currentTabIndex + 2) {
+            card.setAttribute('data-depth', 'hidden');
+          } else {
+            card.setAttribute('data-depth', 'previous');
+          }
+        });
+
+        if (stepperDotsContainer) {
+          var dots = stepperDotsContainer.querySelectorAll('.stepper-dot');
+          dots.forEach(function(d, i) {
+            if (i === currentTabIndex) d.classList.add('active');
+            else d.classList.remove('active');
+          });
+        }
+      }
+
+      function goToTab(newIndex) {
+        if (filteredCards.length === 0) return;
+        currentTabIndex = Math.max(0, Math.min(newIndex, filteredCards.length - 1));
+        renderWindowDeck();
+      }
+
+      function nextTab() {
+        if (currentTabIndex < filteredCards.length - 1) {
+          goToTab(currentTabIndex + 1);
+          return true;
+        }
+        return false;
+      }
+
+      function prevTab() {
+        if (currentTabIndex > 0) {
+          goToTab(currentTabIndex - 1);
+          return true;
+        }
+        return false;
+      }
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          prevTab();
+        });
+      }
+      if (nextBtn) {
+        nextBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          nextTab();
+        });
+      }
+
+      filterPills.forEach(function(pill) {
+        pill.addEventListener('click', function() {
+          filterPills.forEach(function(p) { p.classList.remove('active'); });
+          pill.classList.add('active');
+          activeFilter = pill.getAttribute('data-filter') || 'all';
+          currentTabIndex = 0;
+          updateFilteredCards();
+        });
+      });
+
+      windowCards.forEach(function(card) {
+        card.addEventListener('click', function() {
+          var depth = card.getAttribute('data-depth');
+          if (depth === '1' || depth === '2') {
+            var targetIdx = filteredCards.indexOf(card);
+            if (targetIdx !== -1) {
+              goToTab(targetIdx);
+            }
+          }
+        });
+      });
+
+      var deckDeckWrapper = document.getElementById('window-deck-wrapper');
+      if (deckDeckWrapper) {
+        deckDeckWrapper.addEventListener('wheel', function(e) {
+          if (isWheelThrottled) return;
+
+          if (e.deltaY > 30) {
+            if (currentTabIndex < filteredCards.length - 1) {
+              e.preventDefault();
+              isWheelThrottled = true;
+              nextTab();
+              setTimeout(function() { isWheelThrottled = false; }, 380);
+            }
+          } else if (e.deltaY < -30) {
+            if (currentTabIndex > 0) {
+              e.preventDefault();
+              isWheelThrottled = true;
+              prevTab();
+              setTimeout(function() { isWheelThrottled = false; }, 380);
+            }
+          }
+        }, { passive: false });
+      }
+
+      updateFilteredCards();
+
+      // ==========================================
+      // HERO SPOTLIGHT REVEAL (IRON MAN BASE, CIVILIAN REVEAL)
+      // Moving cursor over hero reveals the Civilian image
+      // Both images centered inside the circle
+      // ==========================================
+      var currentX = window.innerWidth * 0.5;
+      var currentY = window.innerHeight * 0.50;
+      var targetX = currentX;
+      var targetY = currentY;
+      var currentRadius = 0;
+      var targetRadius = 0;
+      var isHovered = false;
+      var isFullSuitMode = true; // Default: Civilian base, Iron Man reveal on hover
+
+      function getRadius() {
+        var w = window.innerWidth;
+        if (w < 480) return 100;
+        if (w < 768) return 140;
+        if (w < 1024) return 180;
+        return 220;
+      }
+
+      function updateSpotlight(x, y, radius) {
+        if (!revealEl) return;
+        var rect = revealEl.getBoundingClientRect();
+        var relX = x - rect.left;
+        var relY = y - rect.top;
+
+        if (radius <= 2) {
+          revealEl.style.opacity = '0';
+          revealEl.style.visibility = 'hidden';
+          revealEl.style.webkitMaskImage = '';
+          revealEl.style.maskImage = '';
+          if (baseImg) {
+            baseImg.style.webkitMaskImage = '';
+            baseImg.style.maskImage = '';
+          }
+          if (revealHud) {
+            revealHud.style.opacity = '0';
+            revealHud.style.visibility = 'hidden';
+          }
+          return;
+        }
+
+        revealEl.style.opacity = '1';
+        revealEl.style.visibility = 'visible';
+        var gradient = 'radial-gradient(circle ' + radius + 'px at ' + relX + 'px ' + relY + 'px, #fff 0%, #fff 75%, rgba(255,255,255,0.5) 88%, transparent 100%)';
+        revealEl.style.webkitMaskImage = gradient;
+        revealEl.style.maskImage = gradient;
+
+        if (baseImg) {
+          var baseGradient = 'radial-gradient(circle ' + radius + 'px at ' + relX + 'px ' + relY + 'px, transparent 0%, transparent 75%, rgba(0,0,0,0.5) 88%, #000 100%)';
+          baseImg.style.webkitMaskImage = baseGradient;
+          baseImg.style.maskImage = baseGradient;
+        }
+
+        if (revealHud) {
+          revealHud.style.opacity = '0.85';
+          revealHud.style.visibility = 'visible';
+          revealHud.style.background = 'radial-gradient(circle ' + radius + 'px at ' + relX + 'px ' + relY + 'px, rgba(0, 240, 255, 0.14) 0%, rgba(245, 179, 66, 0.06) 50%, transparent 75%)';
+        }
+      }
+
+      function renderLoop() {
+        currentX += (targetX - currentX) * 0.18;
+        currentY += (targetY - currentY) * 0.18;
+        currentRadius += (targetRadius - currentRadius) * 0.18;
+        updateSpotlight(currentX, currentY, currentRadius);
+
+        // Blueprint grid parallax
+        currentGridOffset += (targetGridOffset - currentGridOffset) * 0.1;
+        if (globalGrid) {
+          globalGrid.style.transform = 'translateY(' + currentGridOffset.toFixed(2) + 'px)';
+        }
+
+        drawNeuralRoots(currentScrollY, performance.now());
+
+        requestAnimationFrame(renderLoop);
+      }
+      requestAnimationFrame(renderLoop);
+
+      var targetLockTimer = null;
+      function triggerTarget(xRel, yRel, customRadius) {
+        if (!revealEl) return;
+        var rect = revealEl.getBoundingClientRect();
+        targetX = rect.left + rect.width * xRel;
+        targetY = rect.top + rect.height * yRel;
+        targetRadius = customRadius || getRadius();
+        isHovered = true;
+        
+        if (targetLockTimer) clearTimeout(targetLockTimer);
+        targetLockTimer = setTimeout(function() {
+          targetLockTimer = null;
+        }, 3000);
+      }
+
+      var btnArc = document.getElementById('btn-target-arc');
+      if (btnArc) {
+        btnArc.addEventListener('click', function(e) {
+          e.stopPropagation();
+          triggerTarget(0.5, 0.42, 220); // Chest
+        });
+      }
+
+      var btnHelmet = document.getElementById('btn-target-helmet');
+      if (btnHelmet) {
+        btnHelmet.addEventListener('click', function(e) {
+          e.stopPropagation();
+          triggerTarget(0.5, 0.18, 180); // Head
+        });
+      }
+
+      var btnRepulsor = document.getElementById('btn-target-repulsor');
+      if (btnRepulsor) {
+        btnRepulsor.addEventListener('click', function(e) {
+          e.stopPropagation();
+          triggerTarget(0.68, 0.62, 190); // Right hand
+        });
+      }
+
+      // Mousemove: Smooth spotlight reveal of civilian persona over hero image
+      window.addEventListener('mousemove', function(e) {
+        if (targetLockTimer) return;
+        if (e.clientY <= window.innerHeight) {
+          targetX = e.clientX;
+          targetY = e.clientY;
+          targetRadius = getRadius();
+          isHovered = true;
+        } else {
+          isHovered = false;
+          targetRadius = 0;
+        }
+      });
+
+      // Touchmove for mobile devices
+      window.addEventListener('touchmove', function(e) {
+        if (e.touches && e.touches[0] && e.touches[0].clientY <= window.innerHeight) {
+          targetX = e.touches[0].clientX;
+          targetY = e.touches[0].clientY;
+          targetRadius = getRadius();
+          isHovered = true;
+        }
+      }, { passive: true });
+
+      window.addEventListener('touchend', function() {
+        if (targetLockTimer) return;
+        isHovered = false;
+        targetRadius = 0;
+      });
+
+      // Mouseleave
+      window.addEventListener('mouseleave', function() {
+        if (targetLockTimer) return;
+        isHovered = false;
+        targetRadius = 0;
+      });
+
+      // Suiting mode toggle function
+      function setSuitMode(toggled, skipFlash) {
+        isFullSuitMode = toggled;
+        if (suitingFlash && !skipFlash) {
+          suitingFlash.classList.add('active');
+          setTimeout(function() {
+            suitingFlash.classList.remove('active');
+          }, 300);
+        }
+
+        if (!isHovered) {
+          currentRadius = 0;
+          targetRadius = 0;
+          if (revealEl) {
+            revealEl.style.opacity = '0';
+            revealEl.style.visibility = 'hidden';
+            revealEl.style.webkitMaskImage = '';
+            revealEl.style.maskImage = '';
+          }
+          if (baseImg) {
+            baseImg.style.webkitMaskImage = '';
+            baseImg.style.maskImage = '';
+          }
+          if (revealHud) {
+            revealHud.style.opacity = '0';
+            revealHud.style.visibility = 'hidden';
+          }
+        }
+
+        if (isFullSuitMode) {
+          // Civilian Base, Iron Man Reveal
+          if (baseImg) {
+            baseImg.style.backgroundImage = "url('assets/hero_civilian.png')";
+            baseImg.style.filter = "drop-shadow(0 15px 40px rgba(0, 0, 0, 0.85)) drop-shadow(0 0 30px rgba(0, 240, 255, 0.3))";
+          }
+          if (revealEl) {
+            revealEl.style.backgroundImage = "url('assets/hero_ironman.png')";
+            revealEl.style.filter = "drop-shadow(0 15px 45px rgba(0, 0, 0, 0.9)) drop-shadow(0 0 35px rgba(245, 179, 66, 0.25)) drop-shadow(0 0 20px rgba(0, 240, 255, 0.35))";
+          }
+          if (suitingBtnLabel) suitingBtnLabel.textContent = 'Iron Man Mode';
+          if (systemStatus) {
+            systemStatus.textContent = 'AJEESH // CIVILIAN MODE';
+            systemStatus.style.color = '#F5B342';
+          }
+          targetRadius = isHovered ? getRadius() : 0;
+        } else {
+          // Iron Man Base, Civilian Reveal
+          if (baseImg) {
+            baseImg.style.backgroundImage = "url('assets/hero_ironman.png')";
+            baseImg.style.filter = "drop-shadow(0 15px 45px rgba(0, 0, 0, 0.9)) drop-shadow(0 0 35px rgba(245, 179, 66, 0.25)) drop-shadow(0 0 20px rgba(0, 240, 255, 0.35))";
+          }
+          if (revealEl) {
+            revealEl.style.backgroundImage = "url('assets/hero_civilian.png')";
+            revealEl.style.filter = "drop-shadow(0 15px 40px rgba(0, 0, 0, 0.85)) drop-shadow(0 0 30px rgba(0, 240, 255, 0.3))";
+          }
+          if (suitingBtnLabel) suitingBtnLabel.textContent = 'Civilian Mode';
+          if (systemStatus) {
+            systemStatus.textContent = 'AJEESH // 100% SUITED';
+            systemStatus.style.color = '#00F0FF';
+          }
+          targetRadius = isHovered ? getRadius() : 0;
+        }
+      }
+
+      if (suitingBtn) {
+        suitingBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          setSuitMode(!isFullSuitMode);
+        });
+      }
+
+      // Initial state: default Civilian base, Iron Man reveal on hover
+      setSuitMode(true, true);
+
+
+      // Navbar scroll effect & Scroll Spy
+      var navLinks = document.querySelectorAll('.nav-links a');
+      var sections = document.querySelectorAll('main, section');
+
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+          navbar.style.background = 'rgba(7, 9, 14, 0.94)';
+          navbar.style.boxShadow = '0 10px 30px rgba(0,0,0,0.7)';
+        } else {
+          navbar.style.background = 'rgba(7, 9, 14, 0.75)';
+          navbar.style.boxShadow = 'none';
+        }
+
+        // Scroll spy
+        var currentSectionId = '';
+        var scrollPos = window.scrollY + 120;
+
+        sections.forEach(function(sec) {
+          if (sec.offsetTop <= scrollPos && (sec.offsetTop + sec.offsetHeight) > scrollPos) {
+            currentSectionId = sec.getAttribute('id');
+          }
+        });
+
+        if (currentSectionId) {
+          navLinks.forEach(function(link) {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + currentSectionId) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
+
+      // 2. WORD SPLIT ANIMATION
+      var pullUpElements = document.querySelectorAll('.words-pull-up');
+      pullUpElements.forEach(function(el) {
+        if (el.dataset.split === 'true') return;
+        el.dataset.split = 'true';
+
+        var childSpans = Array.from(el.children).filter(function(child) {
+          return child.tagName.toLowerCase() === 'span';
+        });
+
+        var wordIndex = 0;
+
+        if (childSpans.length > 0) {
+          childSpans.forEach(function(span) {
+            var rawText = span.textContent.trim();
+            var words = rawText.split(/\s+/).filter(Boolean);
+            span.textContent = '';
+
+            words.forEach(function(word) {
+              var wSpan = document.createElement('span');
+              wSpan.className = 'pull-word';
+              wSpan.textContent = word;
+              wSpan.style.animationDelay = (wordIndex * 0.09).toFixed(2) + 's';
+              span.appendChild(wSpan);
+              wordIndex++;
+            });
+          });
+        } else {
+          var rawText = el.textContent.trim();
+          var words = rawText.split(/\s+/).filter(Boolean);
+          el.textContent = '';
+
+          words.forEach(function(word) {
+            var wSpan = document.createElement('span');
+            wSpan.className = 'pull-word';
+            wSpan.textContent = word;
+            wSpan.style.animationDelay = (wordIndex * 0.09).toFixed(2) + 's';
+            el.appendChild(wSpan);
+            wordIndex++;
+          });
+        }
+      });
+
+      // 3. SCROLL REVEAL OBSERVER
+      var fadeUpElements = document.querySelectorAll('.fade-up-reveal');
+
+      if (!('IntersectionObserver' in window)) {
+        pullUpElements.forEach(function(el) {
+          el.classList.add('words-visible');
+        });
+        fadeUpElements.forEach(function(el) {
+          var delay = el.getAttribute('data-delay') || '0';
+          el.style.animationDelay = delay + 's';
+          el.classList.add('is-visible');
+        });
+      } else {
+        var wordObserver = new IntersectionObserver(function(entries, observer) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('words-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.15 });
+
+        pullUpElements.forEach(function(el) {
+          wordObserver.observe(el);
+        });
+
+        var fadeObserver = new IntersectionObserver(function(entries, observer) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              var el = entry.target;
+              var delay = el.getAttribute('data-delay') || '0';
+              el.style.animationDelay = delay + 's';
+              el.classList.add('is-visible');
+              observer.unobserve(el);
+            }
+          });
+        }, { threshold: 0.1 });
+
+        fadeUpElements.forEach(function(el) {
+          fadeObserver.observe(el);
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
